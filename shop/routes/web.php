@@ -32,3 +32,6 @@ Route::get('test1',function(){
 Route::get('test2',function (){
 	return view('admin.template.test');
 });
+Route::get('test3',function(){
+	return view('');
+});
