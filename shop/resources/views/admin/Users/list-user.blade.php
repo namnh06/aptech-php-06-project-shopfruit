@@ -90,15 +90,12 @@
             <div class="page-bar">
                 <ul class="page-breadcrumb">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="index.html">Users</a>
                         <i class="fa fa-circle"></i>
                     </li>
                     <li>
-                        <a href="#">Tables</a>
+                        <a href="#">List User</a>
                         <i class="fa fa-circle"></i>
-                    </li>
-                    <li>
-                        <span>Datatables</span>
                     </li>
                 </ul>
                 <div class="page-toolbar">
@@ -187,26 +184,32 @@
                                 <thead>
                                 <tr>
                                     <th> Username </th>
-                                    <th> Full Name </th>
-                                    <th> Points </th>
-                                    <th> Notes </th>
+                                    <th> Email </th>
+                                    <th> Permission </th>
                                     <th> Edit </th>
                                     <th> Delete </th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($users as $user)
                                 <tr>
-                                    <td> alex </td>
-                                    <td> Alex Nilson </td>
-                                    <td> 1234 </td>
-                                    <td class="center"> power user </td>
+                                    <td>{{$user->name_user}}</td>
+                                    <td>{{$user->email_user}}</td>
                                     <td>
-                                        <a class="edit" href="javascript:;"> Edit </a>
+                                        @if($user->permission_user == 1)
+                                        {{'Admin'}}
+                                            @else
+                                        {{'Member'}}
+                                            @endif
                                     </td>
                                     <td>
-                                        <a class="delete" href="javascript:;"> Delete </a>
+                                        <a class="edit" href="{{route('edit-user-get',['id'=>$user->id_user])}}"> Edit </a>
+                                    </td>
+                                    <td>
+                                        <a class="delete" href="{{route('delete-user',['id'=>$user->id_user])}}"> Delete </a>
                                     </td>
                                 </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -219,11 +222,11 @@
     </div>
 @endsection
 @section('page-level-plugins')
-    <script src="assets/global/scripts/datatable.js" type="text/javascript"></script>
-    <script src="assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
-    <script src="assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+    {{--<script src="assets/global/scripts/datatable.js" type="text/javascript"></script>--}}
+    {{--<script src="assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>--}}
+    {{--<script src="assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>--}}
 @endsection
 
 @section('page-level-scripts')
-    <script src="assets/pages/scripts/table-datatables-editable.min.js" type="text/javascript"></script>
+    {{--<script src="assets/pages/scripts/table-datatables-editable.js" type="text/javascript"></script>--}}
 @endsection

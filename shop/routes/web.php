@@ -19,7 +19,14 @@ Route::group(['prefix'=>'admin'],function(){
 	//Users
 	Route::group(['prefix'=>'users'],function(){
 		//get list user
-		Route::get('list-user','UsersController@getListUser');
+		Route::get('list-user','UsersController@getListUser')->name('list-user');
+		//add new user
+		Route::get('add-new-user-get','UsersController@addNewUserGet')->name('add-new-user-get');
+		Route::post('add-new-user-post','UsersController@addNewUserPost')->name('add-new-user-post');
+		//delete user
+		Route::get('delete-user/{id}','UsersController@deleteUser')->name('delete-user');
+		//edit user
+		Route::get('edit-user-get/{id}','UsersController@editUserGet')->name('edit-user-get');
 	});
 });
 //test

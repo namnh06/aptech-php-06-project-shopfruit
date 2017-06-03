@@ -82,6 +82,8 @@ License: You must have a valid license purchased only from themeforest(the above
         @include('admin.template.sidebar-admin')
         <!-- END SIDEBAR -->
         <!-- BEGIN CONTENT -->
+        @include('admin.template.announcement')
+        @include('admin.template.error')
         @yield('content')
         <!-- END CONTENT -->
         <!-- BEGIN QUICK SIDEBAR -->
@@ -124,7 +126,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
 <script src="assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
-
+@yield('my-scripts')
 </body>
 
 </html>
