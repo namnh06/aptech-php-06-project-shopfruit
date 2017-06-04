@@ -40,7 +40,7 @@ class UsersController extends Controller
 		$user->name_user = $request->name;
 		$user->email_user = $request->email;
 		$user->password_user = bcrypt($request->password);
-		$user->permission_user = $request->radio2;
+		$user->permission_user = $request->permission;
 		$user->save();
 
 		return redirect()->route('list-user');
@@ -58,16 +58,34 @@ class UsersController extends Controller
 		return view('admin.users.edit-user',['user'=>$user]);
 	}
 
-	function editUserPost($id){
+	function editUserPost(Request $request,$id){
 		$this->validate($request,
 			[
 				'name'=>'required',
-				'rpassword'=>'same:password'
+
 			]
 			,
 			[
 				'name.required'=>'Name field is required',
+
 			]);
 		$user = User::find($id);
+		$user->name_user = $request->name;
+		if($request->changePassword == 'on'){
+			$this->validate($request,
+				[
+					'password'=>'required',
+					'rpassword'=>'same:password'
+				]
+				,
+				[
+					'password.required'=>'Password field is required',
+				]);
+			$user->password_user = bcrypt($request->password);
+		}
+		$user->permission_user = $request->permission;
+		$user->save();
+
+		return redirect()->route('list-user');
 	}
 }

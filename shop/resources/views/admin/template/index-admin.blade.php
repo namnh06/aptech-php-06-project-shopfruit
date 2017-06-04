@@ -78,12 +78,12 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END HEADER & CONTENT DIVIDER -->
     <!-- BEGIN CONTAINER -->
     <div class="page-container">
+    @include('admin.template.announcement')
+    @include('admin.template.error')
         <!-- BEGIN SIDEBAR -->
         @include('admin.template.sidebar-admin')
         <!-- END SIDEBAR -->
         <!-- BEGIN CONTENT -->
-        @include('admin.template.announcement')
-        @include('admin.template.error')
         @yield('content')
         <!-- END CONTENT -->
         <!-- BEGIN QUICK SIDEBAR -->

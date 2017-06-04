@@ -131,12 +131,6 @@
             </h1>
             <!-- END PAGE TITLE-->
             <!-- END PAGE HEADER-->
-            <div class="m-heading-1 border-green m-bordered">
-                <h3>jQuery Validation Plugin</h3>
-                <p> This jQuery plugin makes simple clientside form validation easy, whilst still offering plenty of customization options. For more info please check out
-                    <a class="btn red btn-outline" href="http://jqueryvalidation.org" target="_blank">the official documentation</a>
-                </p>
-            </div>
             <div class="row">
                 <div class="col-md-12">
                     <!-- BEGIN VALIDATION STATES-->
@@ -164,14 +158,14 @@
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <div class="form-body">
                                     <div class="form-group form-md-line-input">
-                                        <input type="text" class="form-control" name="name" id="form_control_1" placeholder="Enter your name">
+                                        <input type="text" class="form-control" name="name" id="form_control_1" placeholder="Enter your name" value="{{old('name')}}">
                                         <label for="form_control_1">Name
                                             <span class="required">*</span>
                                         </label>
                                         <span class="help-block">Enter your name...</span>
                                     </div>
                                     <div class="form-group form-md-line-input">
-                                        <input type="email" class="form-control" id="form_control_1" name="email" placeholder="Enter your email">
+                                        <input type="email" class="form-control" id="form_control_1" name="email" placeholder="Enter your email" value="{{old('email')}}">
                                         <label for="form_control_1">Email
                                             <span class="required">*</span>
                                         </label>
@@ -193,22 +187,41 @@
                                     </div>
                                     <div class="form-group form-md-radios">
                                         <label for="form_control_1">Permission</label>
+                                        @if(old('permission') == 1)
                                         <div class="md-radio-inline">
                                             <div class="md-radio">
-                                                <input type="radio" id="checkbox2_8" name="radio2" value="1" class="md-radiobtn">
+                                                <input type="radio" id="checkbox2_8" name="permission" value="1" class="md-radiobtn" checked>
                                                 <label for="checkbox2_8">
                                                     <span></span>
                                                     <span class="check"></span>
                                                     <span class="box"></span> Admin </label>
                                             </div>
                                             <div class="md-radio">
-                                                <input type="radio" id="checkbox2_9" name="radio2" value="0" class="md-radiobtn" checked>
+                                                <input type="radio" id="checkbox2_9" name="permission" value="0" class="md-radiobtn" >
                                                 <label for="checkbox2_9">
                                                     <span></span>
                                                     <span class="check"></span>
                                                     <span class="box"></span> Member </label>
                                             </div>
                                         </div>
+                                            @else
+                                            <div class="md-radio-inline">
+                                                <div class="md-radio">
+                                                    <input type="radio" id="checkbox2_8" name="permission" value="1" class="md-radiobtn" >
+                                                    <label for="checkbox2_8">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span> Admin </label>
+                                                </div>
+                                                <div class="md-radio">
+                                                    <input type="radio" id="checkbox2_9" name="permission" value="0" class="md-radiobtn" checked>
+                                                    <label for="checkbox2_9">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span> Member </label>
+                                                </div>
+                                            </div>
+                                            @endif
                                     </div>
                                 </div>
                                 <div class="form-actions">

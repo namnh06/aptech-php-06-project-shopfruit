@@ -155,9 +155,9 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="btn-group">
-                                            <button id="sample_editable_1_new" class="btn green"> Add New
+                                            <a href="{{route('add-new-user-get')}}"><button id="sample_editable_1_new" class="btn green"> Add New
                                                 <i class="fa fa-plus"></i>
-                                            </button>
+                                            </button></a>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -210,8 +210,12 @@
                                     </td>
                                 </tr>
                                     @endforeach
+
                                 </tbody>
                             </table>
+                            <div class="text-center">
+                            {!! $users->links() !!}
+                            </div>
                         </div>
                     </div>
                     <!-- END EXAMPLE TABLE PORTLET-->

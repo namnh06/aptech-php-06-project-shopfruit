@@ -154,25 +154,27 @@
                         </div>
                         <div class="portlet-body">
                             <!-- BEGIN FORM-->
-                            <form action="{{route('add-new-user-post')}}" id="form_sample_2" method="POST">
+                            <form action="{{route('edit-user-post',['id'=>$user->id_user])}}" id="form_sample_2" method="POST">
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <div class="form-body">
                                     <div class="form-group form-md-line-input">
-                                        <input type="text" class="form-control" name="name" id="form_control_1" placeholder="Enter your name" value="{{$user->name_user}}">
+                                        <input type="text" class="form-control" name="name" id="form_control_1" placeholder="Enter your name" value="{{old('name',$user->name_user)}}">
                                         <label for="form_control_1">Name
                                             <span class="required">*</span>
                                         </label>
                                         <span class="help-block">Enter your new name...</span>
                                     </div>
                                     <div class="form-group form-md-line-input">
-                                        <input type="email" class="form-control" id="form_control_1" name="email" placeholder="Enter your email" disabled value="{{$user->email_user}}">
+                                        <input type="email" class="form-control" id="form_control_1" name="email" placeholder="Enter your email" disabled value="{{old('email',$user->email_user)}}">
                                         <label for="form_control_1">Email
                                             <span class="required">*</span>
                                         </label>
                                         <span class="help-block">Please enter your email...</span>
                                     </div>
                                     <div class="form-group form-md-line-input">
-                                        <div class="form-control"><input type="checkbox" name="changePassword" id="changePassword"><span> Change Password</span></div>
+                                        <div class="form-control">
+                                            <input type="checkbox" name="changePassword" id="changePassword"><span> Change Password</span>
+                                        </div>
                                         <input type="password" class="form-control password" id="form_control_1" name="password" placeholder="Enter your password" disabled>
                                         <label class="form_control_1">Password
                                             <span class="required"> * </span>
@@ -189,16 +191,16 @@
                                     <div class="form-group form-md-radios">
                                         <label for="form_control_1">Permission</label>
                                         <div class="md-radio-inline">
-                                            @if($user->permission_user == 0)
+                                            @if($user->permission_user == 0 || old('permission') == 1)
                                             <div class="md-radio">
-                                                <input type="radio" id="checkbox2_8" name="radio2" value="1" class="md-radiobtn">
+                                                <input type="radio" id="checkbox2_8" name="permission" value="1" class="md-radiobtn">
                                                 <label for="checkbox2_8">
                                                     <span></span>
                                                     <span class="check"></span>
                                                     <span class="box"></span> Admin </label>
                                             </div>
                                             <div class="md-radio">
-                                                <input type="radio" id="checkbox2_9" name="radio2" value="0" class="md-radiobtn" checked>
+                                                <input type="radio" id="checkbox2_9" name="permission" value="0" class="md-radiobtn" checked>
                                                 <label for="checkbox2_9">
                                                     <span></span>
                                                     <span class="check"></span>
@@ -206,14 +208,14 @@
                                             </div>
                                                 @else
                                                 <div class="md-radio">
-                                                    <input type="radio" id="checkbox2_8" name="radio2" value="1" class="md-radiobtn" checked>
+                                                    <input type="radio" id="checkbox2_8" name="permission" value="1" class="md-radiobtn" checked>
                                                     <label for="checkbox2_8">
                                                         <span></span>
                                                         <span class="check"></span>
                                                         <span class="box"></span> Admin </label>
                                                 </div>
                                                 <div class="md-radio">
-                                                    <input type="radio" id="checkbox2_9" name="radio2" value="0" class="md-radiobtn" >
+                                                    <input type="radio" id="checkbox2_9" name="permission" value="0" class="md-radiobtn" >
                                                     <label for="checkbox2_9">
                                                         <span></span>
                                                         <span class="check"></span>

@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 //admin group with middleware
 Route::group(['prefix'=>'admin'],function(){
-	//Users
+	//users
 	Route::group(['prefix'=>'users'],function(){
 		//get list user
 		Route::get('list-user','UsersController@getListUser')->name('list-user');
@@ -27,6 +27,7 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('delete-user/{id}','UsersController@deleteUser')->name('delete-user');
 		//edit user
 		Route::get('edit-user-get/{id}','UsersController@editUserGet')->name('edit-user-get');
+		Route::post('edit-user-post/{id}','UsersController@editUserPost')->name('edit-user-post');
 	});
 });
 //test
