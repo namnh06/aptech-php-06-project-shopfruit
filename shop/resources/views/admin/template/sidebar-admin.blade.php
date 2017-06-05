@@ -59,8 +59,52 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{route('add-new-user-get')}}" class="nav-link ">
-                            <i class="icon-user-following"></i>
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
                             <span class="title">Add User</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="nav-item  ">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="fa fa-th-list"></i>
+                    <span class="title">Category</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a href="{{route('list-category')}}" class="nav-link ">
+                            <i class="fa fa-list-alt"></i>
+                            <span class="title">List Category</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('add-new-category-get')}}" class="nav-link ">
+                            <i class="fa fa-list-ul"></i>
+                            <span class="title">Add Category</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="nav-item  ">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-basket"></i>
+                    <span class="title">Product</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a href="{{route('list-category')}}" class="nav-link ">
+                            <i class="fa fa-list-alt"></i>
+                            <span class="title">List Product</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('add-new-category-get')}}" class="nav-link ">
+                            <i class="fa fa-list-ul"></i>
+                            <span class="title">Add Product</span>
                         </a>
                     </li>
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-class UsersController extends Controller
+class UserController extends Controller
 {
     //get list user
 	function __construct()
@@ -15,11 +15,11 @@ class UsersController extends Controller
 	}
 	//get List User
 	function getListUser(){
-		return view('admin.users.list-user');
+		return view('admin.user.list-user');
 	}
 	//add new user get
 	function addNewUserGet(){
-		return view('admin.users.add-new-user');
+		return view('admin.user.add-new-user');
 	}
 	//add new user post
 	function addNewUserPost(Request $request){
@@ -32,9 +32,7 @@ class UsersController extends Controller
 			]
 			,
 			[
-				'name.required'=>'Name field is required',
-				'email.required'=>'Email field is required',
-				'password.required'=>'Name field is required',
+
 			]);
 		$user = new User();
 		$user->name_user = $request->name;
@@ -43,19 +41,13 @@ class UsersController extends Controller
 		$user->permission_user = $request->permission;
 		$user->save();
 
-		return redirect()->route('list-user');
+		return redirect()->route('list-user')->with('announcement','Add Successfully');
 	}
-	//delete User
-	function deleteUser($id){
-		$user = User::find($id);
-		$user->delete();
 
-		return redirect()->route('list-user');
-	}
 	//edit User
 	function editUserGet($id){
 		$user = User::find($id);
-		return view('admin.users.edit-user',['user'=>$user]);
+		return view('admin.user.edit-user',['user'=>$user]);
 	}
 
 	function editUserPost(Request $request,$id){
@@ -66,8 +58,6 @@ class UsersController extends Controller
 			]
 			,
 			[
-				'name.required'=>'Name field is required',
-
 			]);
 		$user = User::find($id);
 		$user->name_user = $request->name;
@@ -79,13 +69,20 @@ class UsersController extends Controller
 				]
 				,
 				[
-					'password.required'=>'Password field is required',
 				]);
 			$user->password_user = bcrypt($request->password);
 		}
 		$user->permission_user = $request->permission;
 		$user->save();
 
-		return redirect()->route('list-user');
+		return redirect()->route('list-user')->with('announcement','Edit Successfully');
+	}
+
+	//delete User
+	function deleteUser($id){
+		$user = User::find($id);
+		$user->delete();
+
+		return redirect()->route('list-user')->with('announcement','Delete Successfully');
 	}
 }

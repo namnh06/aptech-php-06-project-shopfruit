@@ -2572,7 +2572,7 @@ ZipEntry.prototype = {
         //
         // I think I see the logic here : the central directory is used to display
         // content and the local directory is used to extract the files. Mixing / and \
-        // may be used to display \ to windows users and use / when extracting the files.
+        // may be used to display \ to windows user and use / when extracting the files.
         // Unfortunately, this lead also to some issues : http://seclists.org/fulldisclosure/2009/Sep/394
         this.fileNameLength = reader.readInt(2);
         localExtraFieldsLength = reader.readInt(2); // can't be sure this will be the same as the central dir

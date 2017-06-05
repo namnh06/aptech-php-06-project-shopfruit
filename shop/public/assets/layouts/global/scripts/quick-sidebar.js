@@ -17,7 +17,7 @@ var QuickSidebar = function () {
         var wrapperChat = wrapper.find('.page-quick-sidebar-chat');
 
         var initChatSlimScroll = function () {
-            var chatUsers = wrapper.find('.page-quick-sidebar-chat-users');
+            var chatUsers = wrapper.find('.page-quick-sidebar-chat-user');
             var chatUsersHeight;
 
             chatUsersHeight = wrapper.height() - wrapper.find('.nav-tabs').outerHeight(true);
@@ -40,7 +40,7 @@ var QuickSidebar = function () {
         initChatSlimScroll();
         App.addResizeHandler(initChatSlimScroll); // reinitialize on window resize
 
-        wrapper.find('.page-quick-sidebar-chat-users .media-list > .media').click(function () {
+        wrapper.find('.page-quick-sidebar-chat-user .media-list > .media').click(function () {
             wrapperChat.addClass("page-quick-sidebar-content-item-shown");
         });
 

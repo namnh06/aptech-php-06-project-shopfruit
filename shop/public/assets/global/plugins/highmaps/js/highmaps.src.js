@@ -6249,7 +6249,7 @@ Axis.prototype = {
 	defaultOptions: {
 		// allowDecimals: null,
 		// alternateGridColor: null,
-		// categories: [],
+		// category: [],
 		dateTimeLabelFormats: {
 			millisecond: '%H:%M:%S.%L',
 			second: '%H:%M:%S',
@@ -6475,7 +6475,7 @@ Axis.prototype = {
 		axis.visible = options.visible !== false;
 		axis.zoomEnabled = options.zoomEnabled !== false;
 
-		// Initial categories
+		// Initial category
 		axis.categories = options.categories || type === 'category';
 		axis.names = axis.names || []; // Preserve on update (#3830)
 
@@ -7043,7 +7043,7 @@ Axis.prototype = {
 			transA = axis.transA,
 			isXAxis = axis.isXAxis;
 
-		// Adjust translation for padding. Y axis with categories need to go through the same (#1784).
+		// Adjust translation for padding. Y axis with category need to go through the same (#1784).
 		if (isXAxis || hasCategories || pointRange) {
 			if (linkedParent) {
 				minPointOffset = linkedParent.minPointOffset;
@@ -14998,7 +14998,7 @@ extend(Axis.prototype, {
 	},
 
 	/**
-	 * Set new axis categories and optionally redraw
+	 * Set new axis category and optionally redraw
 	 * @param {Array} categories
 	 * @param {Boolean} redraw
 	 */
@@ -15030,7 +15030,7 @@ defaultPlotOptions.column = merge(defaultSeriesOptions, {
 	//pointWidth: null,
 	minPointLength: 0,
 	cropThreshold: 50, // when there are more points, they will not animate out of the chart on xAxis.setExtremes
-	pointRange: null, // null means auto, meaning 1 in a categorized axis and least distance between points if not categories
+	pointRange: null, // null means auto, meaning 1 in a categorized axis and least distance between points if not category
 	states: {
 		hover: {
 			brightness: 0.1,

@@ -658,7 +658,7 @@
 				attr["stroke-width"] = 0;
 			} else if (!point.node.isLeaf) {
 				// If not a leaf, then remove fill
-				// @todo let users set the opacity
+				// @todo let user set the opacity
 				attr.fill = pick(options.interactByLeaf, !options.allowDrillToNode) ? 'none' : Color(attr.fill).setOpacity(state === 'hover' ? 0.75 : 0.15).get();
 			} else if (state) {
 				// Brighten and hoist the hover nodes

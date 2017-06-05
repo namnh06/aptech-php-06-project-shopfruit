@@ -6509,7 +6509,7 @@ Axis.prototype = {
 	defaultOptions: {
 		// allowDecimals: null,
 		// alternateGridColor: null,
-		// categories: [],
+		// category: [],
 		dateTimeLabelFormats: {
 			millisecond: '%H:%M:%S.%L',
 			second: '%H:%M:%S',
@@ -10358,7 +10358,7 @@ extend(Highcharts.Pointer.prototype, {
 			clip = {};
 
 		// Don't initiate panning until the user has pinched. This prevents us from 
-		// blocking page scrolling as users scroll down a long page (#4210).
+		// blocking page scrolling as user scroll down a long page (#4210).
 		if (touchesLength > 1) {
 			self.initiated = true;
 		}

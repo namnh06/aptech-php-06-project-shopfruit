@@ -6458,18 +6458,18 @@
 	     * _.dropRightWhile([1, 2, 3], function(n) { return n > 1; });
 	     * // => [1]
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney',  'status': 'busy', 'active': false },
 	     *   { 'user': 'fred',    'status': 'busy', 'active': true },
 	     *   { 'user': 'pebbles', 'status': 'away', 'active': true }
 	     * ];
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.pluck(_.dropRightWhile(users, 'active'), 'user');
+	     * _.pluck(_.dropRightWhile(user, 'active'), 'user');
 	     * // => ['barney']
 	     *
 	     * // using the "_.matches" callback shorthand
-	     * _.pluck(_.dropRightWhile(users, { 'status': 'away' }), 'user');
+	     * _.pluck(_.dropRightWhile(user, { 'status': 'away' }), 'user');
 	     * // => ['barney', 'fred']
 	     */
 	    function dropRightWhile(array, predicate, thisArg) {
@@ -6508,18 +6508,18 @@
 	     * _.dropWhile([1, 2, 3], function(n) { return n < 3; });
 	     * // => [3]
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney',  'status': 'busy', 'active': true },
 	     *   { 'user': 'fred',    'status': 'busy', 'active': false },
 	     *   { 'user': 'pebbles', 'status': 'away', 'active': true }
 	     * ];
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.pluck(_.dropWhile(users, 'active'), 'user');
+	     * _.pluck(_.dropWhile(user, 'active'), 'user');
 	     * // => ['fred', 'pebbles']
 	     *
 	     * // using the "_.matches" callback shorthand
-	     * _.pluck(_.dropWhile(users, { 'status': 'busy' }), 'user');
+	     * _.pluck(_.dropWhile(user, { 'status': 'busy' }), 'user');
 	     * // => ['pebbles']
 	     */
 	    function dropWhile(array, predicate, thisArg) {
@@ -6555,21 +6555,21 @@
 	     * @returns {number} Returns the index of the found element, else `-1`.
 	     * @example
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney',  'age': 36, 'active': false },
 	     *   { 'user': 'fred',    'age': 40, 'active': true },
 	     *   { 'user': 'pebbles', 'age': 1,  'active': false }
 	     * ];
 	     *
-	     * _.findIndex(users, function(chr) { return chr.age < 40; });
+	     * _.findIndex(user, function(chr) { return chr.age < 40; });
 	     * // => 0
 	     *
 	     * // using the "_.matches" callback shorthand
-	     * _.findIndex(users, { 'age': 1 });
+	     * _.findIndex(user, { 'age': 1 });
 	     * // => 2
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.findIndex(users, 'active');
+	     * _.findIndex(user, 'active');
 	     * // => 1
 	     */
 	    function findIndex(array, predicate, thisArg) {
@@ -6607,21 +6607,21 @@
 	     * @returns {number} Returns the index of the found element, else `-1`.
 	     * @example
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney',  'age': 36, 'active': true },
 	     *   { 'user': 'fred',    'age': 40, 'active': false },
 	     *   { 'user': 'pebbles', 'age': 1,  'active': false }
 	     * ];
 	     *
-	     * _.findLastIndex(users, function(chr) { return chr.age < 40; });
+	     * _.findLastIndex(user, function(chr) { return chr.age < 40; });
 	     * // => 2
 	     *
 	     * // using the "_.matches" callback shorthand
-	     * _.findLastIndex(users, { 'age': 40 });
+	     * _.findLastIndex(user, { 'age': 40 });
 	     * // => 1
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.findLastIndex(users, 'active');
+	     * _.findLastIndex(user, 'active');
 	     * // => 0
 	     */
 	    function findLastIndex(array, predicate, thisArg) {
@@ -7241,18 +7241,18 @@
 	     * _.takeRightWhile([1, 2, 3], function(n) { return n > 1; });
 	     * // => [2, 3]
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney',  'status': 'busy', 'active': false },
 	     *   { 'user': 'fred',    'status': 'busy', 'active': true },
 	     *   { 'user': 'pebbles', 'status': 'away', 'active': true }
 	     * ];
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.pluck(_.takeRightWhile(users, 'active'), 'user');
+	     * _.pluck(_.takeRightWhile(user, 'active'), 'user');
 	     * // => ['fred', 'pebbles']
 	     *
 	     * // using the "_.matches" callback shorthand
-	     * _.pluck(_.takeRightWhile(users, { 'status': 'away' }), 'user');
+	     * _.pluck(_.takeRightWhile(user, { 'status': 'away' }), 'user');
 	     * // => ['pebbles']
 	     */
 	    function takeRightWhile(array, predicate, thisArg) {
@@ -7291,18 +7291,18 @@
 	     * _.takeWhile([1, 2, 3], function(n) { return n < 3; });
 	     * // => [1, 2]
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney',  'status': 'busy', 'active': true },
 	     *   { 'user': 'fred',    'status': 'busy', 'active': false },
 	     *   { 'user': 'pebbles', 'status': 'away', 'active': true }
 	     * ];
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.pluck(_.takeWhile(users, 'active'), 'user');
+	     * _.pluck(_.takeWhile(user, 'active'), 'user');
 	     * // => ['barney']
 	     *
 	     * // using the "_.matches" callback shorthand
-	     * _.pluck(_.takeWhile(users, { 'status': 'busy' }), 'user');
+	     * _.pluck(_.takeWhile(user, { 'status': 'busy' }), 'user');
 	     * // => ['barney', 'fred']
 	     */
 	    function takeWhile(array, predicate, thisArg) {
@@ -7567,13 +7567,13 @@
 	     * @returns {Object} Returns the new `lodash` object.
 	     * @example
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney',  'age': 36 },
 	     *   { 'user': 'fred',    'age': 40 },
 	     *   { 'user': 'pebbles', 'age': 1 }
 	     * ];
 	     *
-	     * var youngest = _.chain(users)
+	     * var youngest = _.chain(user)
 	     *   .sortBy('age')
 	     *   .map(function(chr) { return chr.user + ' is ' + chr.age; })
 	     *   .first()
@@ -7643,17 +7643,17 @@
 	     * @returns {*} Returns the `lodash` object.
 	     * @example
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney', 'age': 36 },
 	     *   { 'user': 'fred',   'age': 40 }
 	     * ];
 	     *
 	     * // without explicit chaining
-	     * _(users).first();
+	     * _(user).first();
 	     * // => { 'user': 'barney', 'age': 36 }
 	     *
 	     * // with explicit chaining
-	     * _(users).chain()
+	     * _(user).chain()
 	     *   .first()
 	     *   .pick('user')
 	     *   .value();
@@ -7876,17 +7876,17 @@
 	     * _.every([true, 1, null, 'yes']);
 	     * // => false
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney', 'age': 36 },
 	     *   { 'user': 'fred',   'age': 40 }
 	     * ];
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.every(users, 'age');
+	     * _.every(user, 'age');
 	     * // => true
 	     *
 	     * // using the "_.matches" callback shorthand
-	     * _.every(users, { 'age': 36 });
+	     * _.every(user, { 'age': 36 });
 	     * // => false
 	     */
 	    function every(collection, predicate, thisArg) {
@@ -7924,17 +7924,17 @@
 	     * var evens = _.filter([1, 2, 3, 4], function(n) { return n % 2 == 0; });
 	     * // => [2, 4]
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney', 'age': 36, 'active': false },
 	     *   { 'user': 'fred',   'age': 40, 'active': true }
 	     * ];
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.pluck(_.filter(users, 'active'), 'user');
+	     * _.pluck(_.filter(user, 'active'), 'user');
 	     * // => ['fred']
 	     *
 	     * // using the "_.matches" callback shorthand
-	     * _.pluck(_.filter(users, { 'age': 36 }), 'user');
+	     * _.pluck(_.filter(user, { 'age': 36 }), 'user');
 	     * // => ['barney']
 	     */
 	    function filter(collection, predicate, thisArg) {
@@ -7967,21 +7967,21 @@
 	     * @returns {*} Returns the matched element, else `undefined`.
 	     * @example
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney',  'age': 36, 'active': false },
 	     *   { 'user': 'fred',    'age': 40, 'active': true },
 	     *   { 'user': 'pebbles', 'age': 1,  'active': false }
 	     * ];
 	     *
-	     * _.result(_.find(users, function(chr) { return chr.age < 40; }), 'user');
+	     * _.result(_.find(user, function(chr) { return chr.age < 40; }), 'user');
 	     * // => 'barney'
 	     *
 	     * // using the "_.matches" callback shorthand
-	     * _.result(_.find(users, { 'age': 1 }), 'user');
+	     * _.result(_.find(user, { 'age': 1 }), 'user');
 	     * // => 'pebbles'
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.result(_.find(users, 'active'), 'user');
+	     * _.result(_.find(user, 'active'), 'user');
 	     * // => 'fred'
 	     */
 	    function find(collection, predicate, thisArg) {
@@ -8029,15 +8029,15 @@
 	     * @returns {*} Returns the matched element, else `undefined`.
 	     * @example
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney', 'age': 36, 'status': 'busy' },
 	     *   { 'user': 'fred',   'age': 40, 'status': 'busy' }
 	     * ];
 	     *
-	     * _.result(_.findWhere(users, { 'status': 'busy' }), 'user');
+	     * _.result(_.findWhere(user, { 'status': 'busy' }), 'user');
 	     * // => 'barney'
 	     *
-	     * _.result(_.findWhere(users, { 'age': 40 }), 'user');
+	     * _.result(_.findWhere(user, { 'age': 40 }), 'user');
 	     * // => 'fred'
 	     */
 	    function findWhere(collection, source) {
@@ -8241,13 +8241,13 @@
 	     * _.map({ 'one': 1, 'two': 2, 'three': 3 }, function(n) { return n * 3; });
 	     * // => [3, 6, 9] (iteration order is not guaranteed)
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney' },
 	     *   { 'user': 'fred' }
 	     * ];
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.map(users, 'user');
+	     * _.map(user, 'user');
 	     * // => ['barney', 'fred']
 	     */
 	    function map(collection, iteratee, thisArg) {
@@ -8287,16 +8287,16 @@
 	     * _.max([]);
 	     * // => -Infinity
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney', 'age': 36 },
 	     *   { 'user': 'fred',   'age': 40 }
 	     * ];
 	     *
-	     * _.max(users, function(chr) { return chr.age; });
+	     * _.max(user, function(chr) { return chr.age; });
 	     * // => { 'user': 'fred', 'age': 40 };
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.max(users, 'age');
+	     * _.max(user, 'age');
 	     * // => { 'user': 'fred', 'age': 40 };
 	     */
 	    var max = createExtremum(arrayMax);
@@ -8332,16 +8332,16 @@
 	     * _.min([]);
 	     * // => Infinity
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney', 'age': 36 },
 	     *   { 'user': 'fred',   'age': 40 }
 	     * ];
 	     *
-	     * _.min(users, function(chr) { return chr.age; });
+	     * _.min(user, function(chr) { return chr.age; });
 	     * // => { 'user': 'barney', 'age': 36 };
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.min(users, 'age');
+	     * _.min(user, 'age');
 	     * // => { 'user': 'barney', 'age': 36 };
 	     */
 	    var min = createExtremum(arrayMin, true);
@@ -8376,18 +8376,18 @@
 	     * _.partition([1.2, 2.3, 3.4], function(n) { return this.floor(n) % 2; }, Math);
 	     * // => [[1, 3], [2]]
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney',  'age': 36, 'active': false },
 	     *   { 'user': 'fred',    'age': 40, 'active': true },
 	     *   { 'user': 'pebbles', 'age': 1,  'active': false }
 	     * ];
 	     *
 	     * // using the "_.matches" callback shorthand
-	     * _.map(_.partition(users, { 'age': 1 }), function(array) { return _.pluck(array, 'user'); });
+	     * _.map(_.partition(user, { 'age': 1 }), function(array) { return _.pluck(array, 'user'); });
 	     * // => [['pebbles'], ['barney', 'fred']]
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.map(_.partition(users, 'active'), function(array) { return _.pluck(array, 'user'); });
+	     * _.map(_.partition(user, 'active'), function(array) { return _.pluck(array, 'user'); });
 	     * // => [['fred'], ['barney', 'pebbles']]
 	     */
 	    var partition = createAggregator(function(result, value, key) {
@@ -8405,15 +8405,15 @@
 	     * @returns {Array} Returns the property values.
 	     * @example
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney', 'age': 36 },
 	     *   { 'user': 'fred',   'age': 40 }
 	     * ];
 	     *
-	     * _.pluck(users, 'user');
+	     * _.pluck(user, 'user');
 	     * // => ['barney', 'fred']
 	     *
-	     * var userIndex = _.indexBy(users, 'user');
+	     * var userIndex = _.indexBy(user, 'user');
 	     * _.pluck(userIndex, 'age');
 	     * // => [36, 40] (iteration order is not guaranteed)
 	     */
@@ -8503,17 +8503,17 @@
 	     * var odds = _.reject([1, 2, 3, 4], function(n) { return n % 2 == 0; });
 	     * // => [1, 3]
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney', 'age': 36, 'active': false },
 	     *   { 'user': 'fred',   'age': 40, 'active': true }
 	     * ];
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.pluck(_.reject(users, 'active'), 'user');
+	     * _.pluck(_.reject(user, 'active'), 'user');
 	     * // => ['barney']
 	     *
 	     * // using the "_.matches" callback shorthand
-	     * _.pluck(_.reject(users, { 'age': 36 }), 'user');
+	     * _.pluck(_.reject(user, { 'age': 36 }), 'user');
 	     * // => ['fred']
 	     */
 	    function reject(collection, predicate, thisArg) {
@@ -8639,17 +8639,17 @@
 	     * _.some([null, 0, 'yes', false], Boolean);
 	     * // => true
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney', 'age': 36, 'active': false },
 	     *   { 'user': 'fred',   'age': 40, 'active': true }
 	     * ];
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.some(users, 'active');
+	     * _.some(user, 'active');
 	     * // => true
 	     *
 	     * // using the "_.matches" callback shorthand
-	     * _.some(users, { 'age': 1 });
+	     * _.some(user, { 'age': 1 });
 	     * // => false
 	     */
 	    function some(collection, predicate, thisArg) {
@@ -8691,14 +8691,14 @@
 	     * _.sortBy([1, 2, 3], function(n) { return this.sin(n); }, Math);
 	     * // => [3, 1, 2]
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'fred' },
 	     *   { 'user': 'pebbles' },
 	     *   { 'user': 'barney' }
 	     * ];
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.pluck(_.sortBy(users, 'user'), 'user');
+	     * _.pluck(_.sortBy(user, 'user'), 'user');
 	     * // => ['barney', 'fred', 'pebbles']
 	     */
 	    function sortBy(collection, iteratee, thisArg) {
@@ -8729,14 +8729,14 @@
 	     * @returns {Array} Returns the new sorted array.
 	     * @example
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney', 'age': 36 },
 	     *   { 'user': 'fred',   'age': 40 },
 	     *   { 'user': 'barney', 'age': 26 },
 	     *   { 'user': 'fred',   'age': 30 }
 	     * ];
 	     *
-	     * _.map(_.sortByAll(users, ['user', 'age']), _.values);
+	     * _.map(_.sortByAll(user, ['user', 'age']), _.values);
 	     * // => [['barney', 26], ['barney', 36], ['fred', 30], ['fred', 40]]
 	     */
 	    function sortByAll(collection) {
@@ -8774,18 +8774,18 @@
 	     * @returns {Array} Returns the new filtered array.
 	     * @example
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney', 'age': 36, 'status': 'busy', 'pets': ['hoppy'] },
 	     *   { 'user': 'fred',   'age': 40, 'status': 'busy', 'pets': ['baby puss', 'dino'] }
 	     * ];
 	     *
-	     * _.pluck(_.where(users, { 'age': 36 }), 'user');
+	     * _.pluck(_.where(user, { 'age': 36 }), 'user');
 	     * // => ['barney']
 	     *
-	     * _.pluck(_.where(users, { 'pets': ['dino'] }), 'user');
+	     * _.pluck(_.where(user, { 'pets': ['dino'] }), 'user');
 	     * // => ['fred']
 	     *
-	     * _.pluck(_.where(users, { 'status': 'busy' }), 'user');
+	     * _.pluck(_.where(user, { 'status': 'busy' }), 'user');
 	     * // => ['barney', 'fred']
 	     */
 	    function where(collection, source) {
@@ -9788,17 +9788,17 @@
 	     * @returns {*} Returns the cloned value.
 	     * @example
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney' },
 	     *   { 'user': 'fred' }
 	     * ];
 	     *
-	     * var shallow = _.clone(users);
-	     * shallow[0] === users[0];
+	     * var shallow = _.clone(user);
+	     * shallow[0] === user[0];
 	     * // => true
 	     *
-	     * var deep = _.clone(users, true);
-	     * deep[0] === users[0];
+	     * var deep = _.clone(user, true);
+	     * deep[0] === user[0];
 	     * // => false
 	     *
 	     * // using a customizer callback
@@ -9846,13 +9846,13 @@
 	     * @returns {*} Returns the deep cloned value.
 	     * @example
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney' },
 	     *   { 'user': 'fred' }
 	     * ];
 	     *
-	     * var deep = _.cloneDeep(users);
-	     * deep[0] === users[0];
+	     * var deep = _.cloneDeep(user);
+	     * deep[0] === user[0];
 	     * // => false
 	     *
 	     * // using a customizer callback
@@ -10641,21 +10641,21 @@
 	     * @returns {string|undefined} Returns the key of the matched element, else `undefined`.
 	     * @example
 	     *
-	     * var users = {
+	     * var user = {
 	     *   'barney':  { 'age': 36, 'active': true },
 	     *   'fred':    { 'age': 40, 'active': false },
 	     *   'pebbles': { 'age': 1,  'active': true }
 	     * };
 	     *
-	     * _.findKey(users, function(chr) { return chr.age < 40; });
+	     * _.findKey(user, function(chr) { return chr.age < 40; });
 	     * // => 'barney' (iteration order is not guaranteed)
 	     *
 	     * // using the "_.matches" callback shorthand
-	     * _.findKey(users, { 'age': 1 });
+	     * _.findKey(user, { 'age': 1 });
 	     * // => 'pebbles'
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.findKey(users, 'active');
+	     * _.findKey(user, 'active');
 	     * // => 'barney'
 	     */
 	    function findKey(object, predicate, thisArg) {
@@ -10685,21 +10685,21 @@
 	     * @returns {string|undefined} Returns the key of the matched element, else `undefined`.
 	     * @example
 	     *
-	     * var users = {
+	     * var user = {
 	     *   'barney':  { 'age': 36, 'active': true },
 	     *   'fred':    { 'age': 40, 'active': false },
 	     *   'pebbles': { 'age': 1,  'active': true }
 	     * };
 	     *
-	     * _.findLastKey(users, function(chr) { return chr.age < 40; });
+	     * _.findLastKey(user, function(chr) { return chr.age < 40; });
 	     * // => returns `pebbles` assuming `_.findKey` returns `barney`
 	     *
 	     * // using the "_.matches" callback shorthand
-	     * _.findLastKey(users, { 'age': 36 });
+	     * _.findLastKey(user, { 'age': 36 });
 	     * // => 'barney'
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.findLastKey(users, 'active');
+	     * _.findLastKey(user, 'active');
 	     * // => 'pebbles'
 	     */
 	    function findLastKey(object, predicate, thisArg) {
@@ -11028,13 +11028,13 @@
 	     * _.mapValues({ 'a': 1, 'b': 2, 'c': 3} , function(n) { return n * 3; });
 	     * // => { 'a': 3, 'b': 6, 'c': 9 }
 	     *
-	     * var users = {
+	     * var user = {
 	     *   'fred':    { 'user': 'fred',    'age': 40 },
 	     *   'pebbles': { 'user': 'pebbles', 'age': 1 }
 	     * };
 	     *
 	     * // using the "_.property" callback shorthand
-	     * _.mapValues(users, 'age');
+	     * _.mapValues(user, 'age');
 	     * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
 	     */
 	    function mapValues(object, iteratee, thisArg) {
@@ -11066,7 +11066,7 @@
 	     * @returns {Object} Returns `object`.
 	     * @example
 	     *
-	     * var users = {
+	     * var user = {
 	     *   'data': [{ 'user': 'barney' }, { 'user': 'fred' }]
 	     * };
 	     *
@@ -11074,7 +11074,7 @@
 	     *   'data': [{ 'age': 36 }, { 'age': 40 }]
 	     * };
 	     *
-	     * _.merge(users, ages);
+	     * _.merge(user, ages);
 	     * // => { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user': 'fred', 'age': 40 }] }
 	     *
 	     * // using a customizer callback
@@ -11890,8 +11890,8 @@
 	     * // => '<b>&lt;script&gt;</b>'
 	     *
 	     * // using the "evaluate" delimiter to execute JavaScript and generate HTML
-	     * var compiled = _.template('<% _.forEach(users, function(user) { %><li><%- user %></li><% }); %>');
-	     * compiled({ 'users': ['fred', 'barney'] });
+	     * var compiled = _.template('<% _.forEach(user, function(user) { %><li><%- user %></li><% }); %>');
+	     * compiled({ 'user': ['fred', 'barney'] });
 	     * // => '<li>fred</li><li>barney</li>'
 	     *
 	     * // using the internal `print` function in "evaluate" delimiters
@@ -11916,9 +11916,9 @@
 	     * // => '<%- value %>'
 	     *
 	     * // using the `imports` option to import `jQuery` as `jq`
-	     * var text = '<% jq.each(users, function(user) { %><li><%- user %></li><% }); %>';
+	     * var text = '<% jq.each(user, function(user) { %><li><%- user %></li><% }); %>';
 	     * var compiled = _.template(text, { 'imports': { 'jq': jQuery } });
-	     * compiled({ 'users': ['fred', 'barney'] });
+	     * compiled({ 'user': ['fred', 'barney'] });
 	     * // => '<li>fred</li><li>barney</li>'
 	     *
 	     * // using the `sourceURL` option to specify a custom sourceURL for the template
@@ -12324,7 +12324,7 @@
 	     * @returns {Function} Returns the callback.
 	     * @example
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'barney', 'age': 36 },
 	     *   { 'user': 'fred',   'age': 40 }
 	     * ];
@@ -12340,7 +12340,7 @@
 	     *   };
 	     * });
 	     *
-	     * _.filter(users, 'age__gt36');
+	     * _.filter(user, 'age__gt36');
 	     * // => [{ 'user': 'fred', 'age': 40 }]
 	     */
 	    function callback(func, thisArg, guard) {
@@ -12403,17 +12403,17 @@
 	     * @returns {Function} Returns the new function.
 	     * @example
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'fred',   'age': 40 },
 	     *   { 'user': 'barney', 'age': 36 }
 	     * ];
 	     *
 	     * var matchesAge = _.matches({ 'age': 36 });
 	     *
-	     * _.filter(users, matchesAge);
+	     * _.filter(user, matchesAge);
 	     * // => [{ 'user': 'barney', 'age': 36 }]
 	     *
-	     * _.find(users, matchesAge);
+	     * _.find(user, matchesAge);
 	     * // => { 'user': 'barney', 'age': 36 }
 	     */
 	    function matches(source) {
@@ -12547,17 +12547,17 @@
 	     * @returns {Function} Returns the new function.
 	     * @example
 	     *
-	     * var users = [
+	     * var user = [
 	     *   { 'user': 'fred' },
 	     *   { 'user': 'barney' }
 	     * ];
 	     *
 	     * var getName = _.property('user');
 	     *
-	     * _.map(users, getName);
+	     * _.map(user, getName);
 	     * // => ['fred', barney']
 	     *
-	     * _.pluck(_.sortBy(users, getName), 'user');
+	     * _.pluck(_.sortBy(user, getName), 'user');
 	     * // => ['barney', 'fred']
 	     */
 	    function property(key) {
