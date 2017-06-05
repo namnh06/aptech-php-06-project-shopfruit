@@ -96,13 +96,13 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="{{route('list-category')}}" class="nav-link ">
+                        <a href="{{route('list-product')}}" class="nav-link ">
                             <i class="fa fa-list-alt"></i>
                             <span class="title">List Product</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('add-new-category-get')}}" class="nav-link ">
+                        <a href="{{route('add-new-product-get')}}" class="nav-link ">
                             <i class="fa fa-list-ul"></i>
                             <span class="title">Add Product</span>
                         </a>

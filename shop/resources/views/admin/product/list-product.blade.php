@@ -10,11 +10,11 @@
             <div class="page-bar">
                 <ul class="page-breadcrumb">
                     <li>
-                        <a href="index.html">Category</a>
+                        <a href="index.html">Product</a>
                         <i class="fa fa-circle"></i>
                     </li>
                     <li>
-                        <a href="#">List Category</a>
+                        <a href="#">List Product</a>
                         <i class="fa fa-circle"></i>
                     </li>
                 </ul>
@@ -47,7 +47,7 @@
             </div>
             <!-- END PAGE BAR -->
             <!-- BEGIN PAGE TITLE-->
-            <h1 class="page-title"> List Category
+            <h1 class="page-title"> List Product
                 <small>editable datatable samples</small>
             </h1>
             <!-- END PAGE TITLE-->
@@ -75,7 +75,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="btn-group">
-                                            <a href="{{route('add-new-category-get')}}"><button id="sample_editable_1_new" class="btn green"> Add New
+                                            <a href="{{route('add-new-product-get')}}"><button id="sample_editable_1_new" class="btn green"> Add New
                                                     <i class="fa fa-plus"></i>
                                                 </button></a>
                                         </div>
@@ -103,27 +103,45 @@
                             <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                 <thead>
                                 <tr>
-                                    <th> Name Category </th>
+                                    <th> Name & Image </th>
+                                    <th> Id Category </th>
+                                    <th> Price </th>
+                                    <th> Discount </th>
+                                    <th> Code </th>
+                                    <th> Status </th>
+                                    <th> Quantity </th>
+                                    <th> S-Description</th>
                                     <th> Edit </th>
                                     <th> Delete </th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($categories as $category)
+                                @foreach($products as $product)
                                     <tr>
-                                        <td>{{$category->name_category}}</td>
+                                        <td>{!!
+                                        "$product->name_vi_product
+                                        <br>
+                                        <img src='upload/images/product/$product->images_product' width=100px"
+                                        !!}</td>
+                                        <td>{{$product->id_category_in_product}}</td>
+                                        <td>{{$product->price_product}}</td>
+                                        <td>{{$product->percent_discount_product}}</td>
+                                        <td>{{$product->code_product}}</td>
+                                        <td>{{$product->status_product}}</td>
+                                        <td>{{$product->quantity_product}}</td>
+                                        <td>{{$product->short_description_product}}</td>
                                         <td>
-                                            <a class="edit" href="{{route('edit-category-get',['id'=>$category->id_category])}}"> Edit </a>
+                                            <a class="edit" href="{{route('edit-category-get',['id'=>$product->id_category])}}"> Edit </a>
                                         </td>
                                         <td>
-                                            <a class="delete" href="{{route('delete-category',['id'=>$category->id_category])}}"> Delete </a>
+                                            <a class="delete" href="{{route('delete-category',['id'=>$product->id_category])}}"> Delete </a>
                                         </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
                             <div class="text-center">
-                                {!! $categories->links() !!}
+                                {!! $products->links() !!}
                             </div>
                         </div>
                     </div>

@@ -41,6 +41,18 @@ Route::group(['prefix'=>'admin'],function(){
 		//delete user
 		Route::get('delete-category/{id}','CategoryController@deleteCategory')->name('delete-category');
 	});
+	Route::group(['prefix'=>'product'],function(){
+		//get list category
+		Route::get('list-product','ProductController@listProduct')->name('list-product');
+		//add new category
+		Route::get('add-new-product','ProductController@addNewProductGet')->name('add-new-product-get');
+		Route::post('add-new-product','ProductController@addNewProductPost')->name('add-new-product-post');
+		//edit user
+		Route::get('edit-product/{id}','Product@editProductGet')->name('edit-product-get');
+		Route::post('edit-product/{id}','ProductController@editProductPost')->name('edit-product-post');
+		//delete user
+		Route::get('delete-product/{id}','ProductController@deleteProduct')->name('delete-product');
+	});
 });
 //test
 Route::get('test', function () {
