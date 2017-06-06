@@ -75,7 +75,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="btn-group">
-                                            <a href="{{route('add-new-product-get')}}"><button id="sample_editable_1_new" class="btn green"> Add New
+                                            <a href="{{route('add-news-get')}}"><button id="sample_editable_1_new" class="btn green"> Add New
                                                     <i class="fa fa-plus"></i>
                                                 </button></a>
                                         </div>
@@ -116,12 +116,12 @@
                                         <td>{!!
                                         "$news->title_vi_news
                                         <br>
-                                        <img src='upload/images/news/$news->image_news' width=100px"
+                                        <img src='upload/images/news/$news->images_news' width=100px"
                                         !!}</td>
                                         <td>{{$news->id_user_in_news}}</td>
                                         <td>{{$news->short_description_news}}</td>
                                         <td>
-                                            <a class="edit" href="{{route('edit-news-get',['id'=>$news->id_news])}}"> Edit </a>
+                                            {{--<a class="edit" href="{{route('edit-news-get',['id'=>$news->id_news])}}"> Edit </a>--}}
                                         </td>
                                         <td>
                                             <a class="delete" href="{{route('delete-news',['id'=>$news->id_news])}}"> Delete </a>

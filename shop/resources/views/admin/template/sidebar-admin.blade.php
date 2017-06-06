@@ -110,6 +110,28 @@
 
                 </ul>
             </li>
+            <li class="nav-item  ">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-basket"></i>
+                    <span class="title">News</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a href="{{route('list-news')}}" class="nav-link ">
+                            <i class="fa fa-list-alt"></i>
+                            <span class="title">List News</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('add-news-get')}}" class="nav-link ">
+                            <i class="fa fa-list-ul"></i>
+                            <span class="title">Add News</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
         </ul>
         <!-- END SIDEBAR MENU -->
         <!-- END SIDEBAR MENU -->
