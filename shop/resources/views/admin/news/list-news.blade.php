@@ -10,11 +10,11 @@
             <div class="page-bar">
                 <ul class="page-breadcrumb">
                     <li>
-                        <a href="index.html">Product</a>
+                        <a href="index.html">News</a>
                         <i class="fa fa-circle"></i>
                     </li>
                     <li>
-                        <a href="#">List Product</a>
+                        <a href="#">List News</a>
                         <i class="fa fa-circle"></i>
                     </li>
                 </ul>
@@ -47,7 +47,7 @@
             </div>
             <!-- END PAGE BAR -->
             <!-- BEGIN PAGE TITLE-->
-            <h1 class="page-title"> List Product
+            <h1 class="page-title"> List News
                 <small>editable datatable samples</small>
             </h1>
             <!-- END PAGE TITLE-->
@@ -103,45 +103,35 @@
                             <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                 <thead>
                                 <tr>
-                                    <th> Name & Image </th>
-                                    <th> Id Category </th>
-                                    <th> Price </th>
-                                    <th> Discount </th>
-                                    <th> Code </th>
-                                    <th> Status </th>
-                                    <th> Quantity </th>
-                                    <th> S-Description</th>
+                                    <th> Title & Image </th>
+                                    <th> ID User </th>
+                                    <th> Description </th>
                                     <th> Edit </th>
                                     <th> Delete </th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($products as $product)
+                                @foreach($allNews as $news)
                                     <tr>
                                         <td>{!!
-                                        "$product->name_vi_product
+                                        "$news->title_vi_news
                                         <br>
-                                        <img src='upload/images/product/$product->images_product' width=100px"
+                                        <img src='upload/images/news/$news->image_news' width=100px"
                                         !!}</td>
-                                        <td>{{$product->id_category_in_product}}</td>
-                                        <td>{{$product->price_product}}</td>
-                                        <td>{{$product->percent_discount_product}}</td>
-                                        <td>{{$product->code_product}}</td>
-                                        <td>{{$product->status_product}}</td>
-                                        <td>{{$product->quantity_product}}</td>
-                                        <td>{{$product->short_description_product}}</td>
+                                        <td>{{$news->id_user_in_news}}</td>
+                                        <td>{{$news->short_description_news}}</td>
                                         <td>
-                                            <a class="edit" href="{{route('edit-product-get',['id'=>$product->id_product])}}"> Edit </a>
+                                            <a class="edit" href="{{route('edit-news-get',['id'=>$news->id_news])}}"> Edit </a>
                                         </td>
                                         <td>
-                                            <a class="delete" href="{{route('delete-product',['id'=>$product->id_product])}}"> Delete </a>
+                                            <a class="delete" href="{{route('delete-news',['id'=>$news->id_news])}}"> Delete </a>
                                         </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
                             <div class="text-center">
-                                {!! $products->links() !!}
+                                {!! $allNews->links() !!}
                             </div>
                         </div>
                     </div>

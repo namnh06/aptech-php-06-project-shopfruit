@@ -48,10 +48,22 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('add-new-product','ProductController@addNewProductGet')->name('add-new-product-get');
 		Route::post('add-new-product','ProductController@addNewProductPost')->name('add-new-product-post');
 		//edit user
-		Route::get('edit-product/{id}','Product@editProductGet')->name('edit-product-get');
+		Route::get('edit-product/{id}','ProductController@editProductGet')->name('edit-product-get');
 		Route::post('edit-product/{id}','ProductController@editProductPost')->name('edit-product-post');
-		//delete user
+		//delete product
 		Route::get('delete-product/{id}','ProductController@deleteProduct')->name('delete-product');
+	});
+	Route::group(['prefix'=>'news'],function(){
+		//get list news
+		Route::get('list-news','NewsController@listNews')->name('list-news');
+		//add new news
+		Route::get('add-news','NewsController@addNewsGet')->name('add-news-get');
+		Route::post('add-news','NewsController@addNewsPost')->name('add-news-post');
+		//edit news
+		Route::get('edit-news/{id}','NewsController@editNewsGet')->name('edit-news-get');
+		Route::post('edit-news/{id}','NewsController@editNewsPost')->name('edit-news-post');
+		//delete news
+		Route::get('delete-news/{id}','NewsController@deleteNews')->name('delete-news');
 	});
 });
 //test

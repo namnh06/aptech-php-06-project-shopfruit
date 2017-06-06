@@ -28,4 +28,8 @@ class User extends Authenticatable
     ];
 
     protected $primaryKey = 'id_user';
+
+    public function news(){
+    	return $this->hasMany('App\NewsModel','id_user_in_news','id_user');
+	}
 }
