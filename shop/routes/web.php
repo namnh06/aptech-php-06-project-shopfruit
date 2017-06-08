@@ -14,8 +14,13 @@
 Route::get('/', function () {
 	return view('welcome');
 });
+//login admin page
+Route::get('login-admin','UserController@loginAdminGet')->name('login-admin-get');
+Route::post('login-admin','UserController@loginAdminPost')->name('login-admin-post');
+//logout admin page
+Route::get('logout','UserController@logout')->name('logout');
 //admin group with middleware
-Route::group(['prefix'=>'admin'],function(){
+Route::group(['prefix'=>'admin','middleware'=>'admin.login'],function(){
 	//user
 	Route::group(['prefix'=>'user'],function(){
 		//get list user

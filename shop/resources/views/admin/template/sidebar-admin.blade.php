@@ -112,7 +112,7 @@
             </li>
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-basket"></i>
+                    <i class="fa fa-newspaper-o"></i>
                     <span class="title">News</span>
                     <span class="arrow"></span>
                 </a>

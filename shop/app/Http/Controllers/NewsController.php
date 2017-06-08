@@ -70,41 +70,28 @@ class NewsController extends Controller
 	}
 
 	//edit
-	function editProductGet($id){
-		$news = ProductModel::find($id);
-		return view('admin.product.edit-product',['product'=>$news]);
+	function editNewsGet($id){
+		$news = NewsModel::find($id);
+		return view('admin.news.edit-news',['news'=>$news]);
 	}
 
-	function editProductPost(Request $request,$id){
+	function editNewsPost(Request $request,$id){
 		$this->validate($request,
 			[
-				'name'=>'required',
-				'category'=>'required',
-				'price'=>'required',
-				'code'=>'required',
-				'quantity'=>'required',
-				's_description'=>'required',
+				'title'=>'required',
+				'description'=>'required',
+				'content_news'=>'required',
 			],
 			[
 			]);
-		$news = ProductModel::find($id);
-		$news->name_vi_product = $request->name;
-		$news->name_en_product = str_slug($request->name);
-		$news->id_category_in_product = $request->category;
-		$news->price_product = $request->price;
-		$news->percent_discount_product = $request->discount;
-		$news->code_product = $request->code;
-		if(strtolower($request->status) == 'hot'){
-			$news->status_product = '1';
-		} else {
-			$news->status_product = '0';
-		}
-		$news->quantity_product = $request->quantity;
-		$news->short_description_product = $request->s_description;
-		$news->long_description_product = $request->l_description;
+		$news = NewsModel::find($id);
+		//temporary with username until using middleware and login
+		$news->id_user_in_news = 4;
+		$news->title_vi_news = $request->title;
+		$news->title_en_news = str_slug($request->name);
+		$news->short_description_news = $request->description;
+		$news->content_news = $request->content_news;
 
-
-		//check file image
 		if($request->hasFile('image')){
 			$file = $request->file('image');
 			$ext = $file->getClientOriginalExtension();
@@ -117,19 +104,18 @@ class NewsController extends Controller
 				}
 			}
 			if($extCheck == false){
-				return redirect()->route('edit-product-get',['id'=>$news->id_product])->with('error','Upload file has extension JPG, PNG or JPEG');
+				return redirect()->route('add-news-get')->with('error','Upload file has extension JPG, PNG or JPEG');
 			}
-			$nameImage = str_random(4)."_".str_slug($request->name).".".$ext;
+			$nameImage = str_random(4)."_".str_slug($request->title_vi_news).".".$ext;
 			while(file_exists('upload/images/product/'.$nameImage)){
 				$nameImage = str_random(4)."_".str_slug($request->name);
 			}
-			$file->move('upload/images/product/',$nameImage);
-			\File::delete("upload/images/product/$news->images_product");
-			$news->images_product = $nameImage;
+			$file->move('upload/images/news/',$nameImage);
+			$news->images_news = $nameImage;
 		}
 		$news->save();
 
-		return redirect()->route('list-product')->with('announcement','Edit Successfully');
+		return redirect()->route('list-news')->with('announcement','Edit Successfully');
 	}
 	//delete category
 	function deleteNews($id){

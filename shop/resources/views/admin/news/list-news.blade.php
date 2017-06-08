@@ -121,7 +121,7 @@
                                         <td>{{$news->id_user_in_news}}</td>
                                         <td>{{$news->short_description_news}}</td>
                                         <td>
-                                            {{--<a class="edit" href="{{route('edit-news-get',['id'=>$news->id_news])}}"> Edit </a>--}}
+                                            <a class="edit" href="{{route('edit-news-get',['id'=>$news->id_news])}}"> Edit </a>
                                         </td>
                                         <td>
                                             <a class="delete" href="{{route('delete-news',['id'=>$news->id_news])}}"> Delete </a>
