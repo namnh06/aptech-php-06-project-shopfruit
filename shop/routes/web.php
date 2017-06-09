@@ -71,16 +71,12 @@ Route::group(['prefix'=>'admin','middleware'=>'admin.login'],function(){
 		Route::get('delete-news/{id}','NewsController@deleteNews')->name('delete-news');
 	});
 });
-//test
-Route::get('test', function () {
-	return view('admin.template.index-admin');
-});
-Route::get('test1',function(){
-	return view('admin.layout.editable-table');
-});
-Route::get('test2',function (){
-	return view('admin.template.test');
-});
-Route::get('test4',function(){
-	return view('');
+
+Route::group(['prefix'=>'front'],function(){
+	//home
+	Route::get('index','PagesController@index')->name('index');
+	//template
+	Route::get('template','PagesController@template')->name('template');
+	//product detail
+	Route::get('product-detail/{id}/{product}.html','PagesController@productDetail')->name('product-detail');
 });

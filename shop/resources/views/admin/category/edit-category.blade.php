@@ -158,7 +158,7 @@
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <div class="form-body">
                                     <div class="form-group form-md-line-input">
-                                        <input type="text" class="form-control" name="name" id="form_control_1" placeholder="Enter your name" value="{{old('name')}}">
+                                        <input type="text" class="form-control" name="name" id="form_control_1" placeholder="Enter your name" value="{{old('name',$category->name_category)}}">
                                         <label for="form_control_1">Name Category
                                             <span class="required">*</span>
                                         </label>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\NewsModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class NewsController extends Controller
 {
@@ -37,7 +39,7 @@ class NewsController extends Controller
 			]);
 		$news = new NewsModel();
 		//temporary with username until using middleware and login
-		$news->id_user_in_news = 4;
+		$news->id_user_in_news = Auth::user()->id_user;
 		$news->title_vi_news = $request->title;
 		$news->title_en_news = str_slug($request->name);
 		$news->short_description_news = $request->description;
@@ -86,7 +88,7 @@ class NewsController extends Controller
 			]);
 		$news = NewsModel::find($id);
 		//temporary with username until using middleware and login
-		$news->id_user_in_news = 4;
+		$news->id_user_in_news = Auth::user()->id_user;
 		$news->title_vi_news = $request->title;
 		$news->title_en_news = str_slug($request->name);
 		$news->short_description_news = $request->description;
@@ -120,7 +122,7 @@ class NewsController extends Controller
 	//delete category
 	function deleteNews($id){
 		$news = NewsModel::find($id);
-		\File::delete("upload/images/news/$news->images_news");
+		File::delete("upload/images/news/$news->images_news");
 		$news->delete();
 
 		return redirect()->route('list-news')->with('announcement','Delete Successfully');
