@@ -14,15 +14,13 @@
                             <div class="layered layered-category">
                                 <div class="layered-content">
                                     <ul class="tree-menu">
-                                        <li class="active">
-                                            <span></span><a href="product-vegetables.html">Vegetables</a>
-
-                                        </li>
-                                        <li><span></span><a href="product-fruits.html">Fruits</a></li>
-                                        <li><span></span><a href="product-cereals.html">Cereals</a></li>
-                                        <li><span></span><a href="product-beans.html">Beans</a></li>
-                                        <li><span></span><a href="product-nuts-seeds.html">Nuts & Seeds</a></li>
-                                        <li><span></span><a href="product-spices.html">Spices</a></li>
+                                        @foreach($categories as $category)
+                                            <li
+                                            @if($category->id_category == $product->id_category_in_product)
+                                                {!!"class='active'"!!}
+                                                    @endif
+                                            ><span></span><a href="{{route('category',['id'=>$category->id_category,'category'=>$category->name_category])}}">{{$category->name_category}}</a>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

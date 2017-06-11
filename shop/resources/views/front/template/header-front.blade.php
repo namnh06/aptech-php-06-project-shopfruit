@@ -4,7 +4,7 @@
     <div class="container main-header">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 logo">
-                <a href="front/index.html"><img alt="Eco Shop" src="front/images/logo.png"/></a>
+                <a href="{{route('index')}}"><img alt="Eco Shop" src="front/images/logo.png"/></a>
             </div>
             <div class="col-xs-4 col-sm-12 col-md-5 col-lg-4 header-search-box">
                 <form class="form-inline">
@@ -51,12 +51,9 @@
                                         <ul class="dropdown-menu container-fluid">
                                             <li class="block-container">
                                                 <ul class="block">
-                                                    <li class="link_container"><a href="front/product-vegetables.html">Vegetables</a></li>
-                                                    <li class="link_container"><a href="front/product-fruits.html">Fruits</a></li>
-                                                    <li class="link_container"><a href="front/product-cereals.html">Cereals</a></li>
-                                                    <li class="link_container"><a href="front/product-beans.html">Beans</a></li>
-                                                    <li class="link_container"><a href="front/product-nuts-seeds.html">Nuts & Seeds</a></li>
-                                                    <li class="link_container"><a href="front/product-spices.html">Spices</a></li>
+                                                    @foreach($categories as $category)
+                                                        <li class="link_container"><a href="{{route('category',['id'=>$category->id_category,'category'=>$category->name_category])}}">{{$category->name_category}}</a>
+                                                    @endforeach
                                                 </ul>
                                             </li>
                                         </ul>

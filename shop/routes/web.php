@@ -79,4 +79,6 @@ Route::group(['prefix'=>'front'],function(){
 	Route::get('template','PagesController@template')->name('template');
 	//product detail
 	Route::get('product-detail/{id}/{product}.html','PagesController@productDetail')->name('product-detail');
+	//category
+	Route::get('category/{id}/{category}.html','PagesController@category')->name('category');
 });
