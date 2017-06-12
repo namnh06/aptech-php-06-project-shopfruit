@@ -368,5 +368,5 @@
             type="text/javascript"></script>
 @endsection
 @section('page-level-scripts')
-    {{--<script src="assets/pages/scripts/form-validation-md.min.js" type="text/javascript"></script>--}}
+
 @endsection
