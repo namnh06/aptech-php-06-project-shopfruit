@@ -252,20 +252,41 @@
                                         </label>
                                         <span class="help-block">Enter Product Code...</span>
                                     </div>
-                                    <div class="form-group form-md-line-input">
-                                        <input type="text" class="form-control"
-                                               name="status" id="form_control_1"
-                                               placeholder="Enter Product Status"
-                                               @if($product->status_product == 1)
-                                                       <?php $hot = 'hot' ?>
-                                               value="{{old('status',"hot")}}">
-                                                       @else
-                                            value="{{old('status',"")}}">
-                                                       @endif
-                                        <label for="form_control_1">Status
-                                            Product
-                                        </label>
-                                        <span class="help-block">Enter Product Status : Hot, New...</span>
+                                    <div class="form-group form-md-radios">
+                                        <label for="form_control_1">Status</label>
+                                        <div class="md-radio-list">
+                                            @if(old('status') == 1 || $product->status_product == 1)
+                                                <div class="md-radio">
+                                                    <input type="radio" id="checkbox112_6" name="status" value="1" class="md-radiobtn" checked>
+                                                    <label for="checkbox112_6">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span> In-Stock </label>
+                                                </div>
+                                                <div class="md-radio">
+                                                    <input type="radio" id="checkbox112_7" name="status" value="2" class="md-radiobtn">
+                                                    <label for="checkbox112_7">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span> Out-Stock </label>
+                                                </div>
+                                            @elseif(old('status') == 2 || $product->status_product == 2)
+                                                <div class="md-radio">
+                                                    <input type="radio" id="checkbox112_6" name="status" value="1" class="md-radiobtn" >
+                                                    <label for="checkbox112_6">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span> In-Stock </label>
+                                                </div>
+                                                <div class="md-radio">
+                                                    <input type="radio" id="checkbox112_7" name="status" value="2" class="md-radiobtn" checked>
+                                                    <label for="checkbox112_7">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span> Out-Stock </label>
+                                                </div>
+                                            @endif
+                                        </div>
                                     </div>
                                     <div class="form-group form-md-line-input">
                                         <input type="number"

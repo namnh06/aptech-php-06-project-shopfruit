@@ -67,7 +67,11 @@
                                 <div class="info-orther">
                                     <p>Product Code: {{$product->code_product}}</p>
 
-                                    <p>Status: <span class="in-stock">{{$product->status_product}}</span></p>
+                                    <p>Status: <span class="in-stock">@if($product->status_product == 1)
+                                                {{'In-Stock'}}
+                                            @else
+                                                {{'Out-Stock'}}
+                                            @endif</span></p>
 
                                 </div>
                                 <div class="product-desc">

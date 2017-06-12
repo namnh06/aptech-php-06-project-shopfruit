@@ -48,11 +48,7 @@ class ProductController extends Controller
 		$product->price_product = $request->price;
 		$product->percent_discount_product = $request->discount;
 		$product->code_product = $request->code;
-		if(strtolower($request->status) == 'hot'){
-			$product->status_product = '1';
-		} else {
-			$product->status_product = '0';
-		}
+		$product->status_product = $request->status;
 		$product->quantity_product = $request->quantity;
 		$product->short_description_product = $request->s_description;
 		$product->long_description_product = $request->l_description;
@@ -108,11 +104,7 @@ class ProductController extends Controller
 		$product->price_product = $request->price;
 		$product->percent_discount_product = $request->discount;
 		$product->code_product = $request->code;
-		if(strtolower($request->status) == 'hot'){
-			$product->status_product = '1';
-		} else {
-			$product->status_product = '0';
-		}
+		$product->status_product = $request->status;
 		$product->quantity_product = $request->quantity;
 		$product->short_description_product = $request->s_description;
 		$product->long_description_product = $request->l_description;

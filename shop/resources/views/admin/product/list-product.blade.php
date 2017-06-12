@@ -127,7 +127,11 @@
                                         <td>{{$product->price_product}}</td>
                                         <td>{{$product->percent_discount_product}}</td>
                                         <td>{{$product->code_product}}</td>
-                                        <td>{{$product->status_product}}</td>
+                                        <td>@if($product->status_product == 1)
+                                        {{'In-Stock'}}
+                                        @else
+                                                {{'Out-Stock'}}
+                                        @endif</td>
                                         <td>{{$product->quantity_product}}</td>
                                         <td>{{$product->short_description_product}}</td>
                                         <td>
