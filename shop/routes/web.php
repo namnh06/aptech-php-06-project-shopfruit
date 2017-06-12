@@ -52,11 +52,23 @@ Route::group(['prefix'=>'admin','middleware'=>'admin.login'],function(){
 		//add new category
 		Route::get('add-new-product','ProductController@addNewProductGet')->name('add-new-product-get');
 		Route::post('add-new-product','ProductController@addNewProductPost')->name('add-new-product-post');
-		//edit user
+		//edit product
 		Route::get('edit-product/{id}','ProductController@editProductGet')->name('edit-product-get');
 		Route::post('edit-product/{id}','ProductController@editProductPost')->name('edit-product-post');
 		//delete product
 		Route::get('delete-product/{id}','ProductController@deleteProduct')->name('delete-product');
+	});
+	Route::group(['prefix'=>'category-news'],function(){
+		//get list category-news
+		Route::get('list-category-news','CategoryNewsController@listCategoryNews')->name('list-category-news');
+		//add new category-news
+		Route::get('add-new-category-news','CategoryNewsController@addNewCategoryNewsGet')->name('add-category-news-get');
+		Route::post('add-new-category-news','CategoryNewsController@addNewCategoryNewsPost')->name('add-category-news-post');
+		//edit category-news
+		Route::get('edit-category-news/{id}','CategoryNewsController@editCategoryNewsGet')->name('edit-category-news-get');
+		Route::post('edit-category-news/{id}','CategoryNewsController@editCategoryNewsPost')->name('edit-category-news-post');
+		//delete category-news
+		Route::get('delete-category-news/{id}','CategoryNewsController@deleteCategoryNews')->name('delete-category-news');
 	});
 	Route::group(['prefix'=>'news'],function(){
 		//get list news
@@ -81,4 +93,14 @@ Route::group(['prefix'=>'front'],function(){
 	Route::get('product-detail/{id}/{product}.html','PagesController@productDetail')->name('product-detail');
 	//category
 	Route::get('category/{id}/{category}.html','PagesController@category')->name('category');
+	//category news
+	Route::get('category-news/{id}/{categoryNews}.html','PagesController@categoryNews')->name('category-news');
+	//news
+	Route::get('news-detail/{id}/{news}.html','PagesController@news')->name('news');
+	//policy
+	Route::get('policy','PagesController@policy')->name('policy');
+	//about us
+	Route::get('about','PagesController@about')->name('about');
+	//contact
+	Route::get('contact','PagesController@contact')->name('contact');
 });

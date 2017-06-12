@@ -10,11 +10,11 @@
             <div class="page-bar">
                 <ul class="page-breadcrumb">
                     <li>
-                        <a href="index.html">News</a>
+                        <a href="index.html">Category News</a>
                         <i class="fa fa-circle"></i>
                     </li>
                     <li>
-                        <a href="#">List News</a>
+                        <a href="#">List Category News</a>
                         <i class="fa fa-circle"></i>
                     </li>
                 </ul>
@@ -47,7 +47,7 @@
             </div>
             <!-- END PAGE BAR -->
             <!-- BEGIN PAGE TITLE-->
-            <h1 class="page-title"> List News
+            <h1 class="page-title"> List Category News
                 <small>editable datatable samples</small>
             </h1>
             <!-- END PAGE TITLE-->
@@ -75,7 +75,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="btn-group">
-                                            <a href="{{route('add-news-get')}}"><button id="sample_editable_1_new" class="btn green"> Add New
+                                            <a href="{{route('add-category-news-get')}}"><button id="sample_editable_1_new" class="btn green"> Add New
                                                     <i class="fa fa-plus"></i>
                                                 </button></a>
                                         </div>
@@ -103,37 +103,27 @@
                             <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                 <thead>
                                 <tr>
-                                    <th> Title & Image </th>
-                                    <th>ID Cateogry</th>
-                                    <th> ID User </th>
-                                    <th> Description </th>
+                                    <th> Name Category </th>
                                     <th> Edit </th>
                                     <th> Delete </th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($allNews as $news)
+                                @foreach($categoriesNews as $categoryNews)
                                     <tr>
-                                        <td>{!!
-                                        "$news->title_vi_news
-                                        <br>
-                                        <img src='upload/images/news/$news->images_news' width=100px"
-                                        !!}</td>
-                                        <td>{{$news->id_category_in_news}}</td>
-                                        <td>{{$news->id_user_in_news}}</td>
-                                        <td>{{$news->short_description_news}}</td>
+                                        <td>{{$categoryNews->name_category_news}}</td>
                                         <td>
-                                            <a class="edit" href="{{route('edit-news-get',['id'=>$news->id_news])}}"> Edit </a>
+                                            <a class="edit" href="{{route('edit-category-news-get',['id'=>$categoryNews->id_category_news])}}"> Edit </a>
                                         </td>
                                         <td>
-                                            <a class="delete" href="{{route('delete-news',['id'=>$news->id_news])}}"> Delete </a>
+                                            <a class="delete" href="{{route('delete-category-news',['id'=>$categoryNews->id_category_news])}}"> Delete </a>
                                         </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
                             <div class="text-center">
-                                {!! $allNews->links() !!}
+                                {!! $categoriesNews->links() !!}
                             </div>
                         </div>
                     </div>

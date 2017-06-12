@@ -165,6 +165,24 @@
                                         <span class="help-block">Enter Title News...</span>
                                     </div>
                                     <div class="form-group form-md-line-input">
+                                        <select class="form-control"
+                                                name="category">
+                                            <option value="">Select</option>
+
+                                            @foreach($categoriesNews as $categoryNews)
+                                                <option
+                                                        @if(old('category') == $categoryNews->id_category_news || $news->categoryNews->id_category_news ==$categoryNews->id_category_news )
+                                                        {{"selected"}}
+                                                        @endif
+                                                        value="{{$categoryNews->id_category_news}}">{{$categoryNews->name_category_news}}</option>
+                                            @endforeach
+                                        </select>
+                                        <label for="form_control_1">Category News
+                                            <span class="required">*</span>
+                                        </label>
+                                        <span class="help-block">Choose Category News...</span>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
                                         <textarea class="form-control"
                                                   name="description"
                                                   rows="3">{{old('description',$news->short_description_news)}}</textarea>

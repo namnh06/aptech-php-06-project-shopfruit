@@ -154,54 +154,15 @@
                         </div>
                         <div class="portlet-body">
                             <!-- BEGIN FORM-->
-                            <form action="{{route('add-news-post')}}" id="form_sample_2" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('add-category-news-post')}}" id="form_sample_2" method="POST">
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <div class="form-body">
                                     <div class="form-group form-md-line-input">
-                                        <input type="text" class="form-control" name="title" id="form_control_1" placeholder="Enter your name" value="{{old('title')}}">
-                                        <label for="form_control_1">Title News
+                                        <input type="text" class="form-control" name="name" id="form_control_1" placeholder="Enter your name" value="{{old('name')}}">
+                                        <label for="form_control_1">Name Category
                                             <span class="required">*</span>
                                         </label>
-                                        <span class="help-block">Enter Title News...</span>
-                                    </div>
-                                    <div class="form-group form-md-line-input">
-                                        <select class="form-control"
-                                                name="category">
-                                            <option value="">Select</option>
-
-                                            @foreach($categoriesNews as $categoryNews)
-                                                <option
-                                                        @if(old('category') == $categoryNews->id_category_news)
-                                                        {{"selected"}}
-                                                        @endif
-                                                        value="{{$categoryNews->id_category_news}}">{{$categoryNews->name_category_news}}</option>
-                                            @endforeach
-                                        </select>
-                                        <label for="form_control_1">Category News
-                                            <span class="required">*</span>
-                                        </label>
-                                        <span class="help-block">Choose Category News...</span>
-                                    </div>
-                                    <div class="form-group form-md-line-input">
-                                        <textarea class="form-control"
-                                                  name="description"
-                                                  rows="3">{{old('description')}}</textarea>
-                                        <label for="form_control_1">Description
-                                            <span class="help-block">Enter News Description...</span></label>
-                                    </div>
-                                    <div class="form-group form-md-line-input">
-                                        <textarea class="ckeditor form-control"
-                                                  name="content_news"
-                                                  rows="6">{{old('content_news')}}</textarea>
-                                        <label for="form_control_1">Content News</label>
-                                        <span class="help-block">Enter Content News...</span>
-                                    </div>
-                                    <div class="form-group form-md-line-input">
-                                        <input type="file" name="image"
-                                               class="form-control">
-                                        <label for="form_control_1">News
-                                            Image</label>
-                                        <span class="help-block">News Image Upload...</span>
+                                        <span class="help-block">Enter Category Name...</span>
                                     </div>
                                 </div>
                                 <div class="form-actions">
@@ -226,8 +187,6 @@
 @section('page-level-plugins')
     {{--<script src="assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>--}}
     {{--<script src="assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>--}}
-    <script src="assets/global/plugins/ckeditor/ckeditor.js"
-            type="text/javascript"></script>
 @endsection
 @section('page-level-scripts')
     {{--<script src="assets/pages/scripts/form-validation-md.min.js" type="text/javascript"></script>--}}

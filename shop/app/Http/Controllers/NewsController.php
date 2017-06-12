@@ -6,6 +6,7 @@ use App\NewsModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use App\CategoryNewsModel;
 
 class NewsController extends Controller
 {
@@ -14,6 +15,8 @@ class NewsController extends Controller
 	{
 		$allNews = NewsModel::paginate(10);
 		view()->share('allNews',$allNews);
+		$categoriesNews = CategoryNewsModel::all();
+		view()->share('categoriesNews',$categoriesNews);
 	}
 
 	//get list product
@@ -31,6 +34,7 @@ class NewsController extends Controller
 		$this->validate($request,
 			[
 				'title'=>'required',
+				'category'=>'required',
 				'description'=>'required',
 				'content_news'=>'required',
 				'image'=>'required',
@@ -38,10 +42,10 @@ class NewsController extends Controller
 			[
 			]);
 		$news = new NewsModel();
-		//temporary with username until using middleware and login
 		$news->id_user_in_news = Auth::user()->id_user;
 		$news->title_vi_news = $request->title;
-		$news->title_en_news = str_slug($request->name);
+		$news->title_en_news = str_slug($request->title);
+		$news->id_category_in_news = $request->category;
 		$news->short_description_news = $request->description;
 		$news->content_news = $request->content_news;
 
@@ -81,16 +85,17 @@ class NewsController extends Controller
 		$this->validate($request,
 			[
 				'title'=>'required',
+				'category'=>'required',
 				'description'=>'required',
 				'content_news'=>'required',
 			],
 			[
 			]);
 		$news = NewsModel::find($id);
-		//temporary with username until using middleware and login
 		$news->id_user_in_news = Auth::user()->id_user;
 		$news->title_vi_news = $request->title;
-		$news->title_en_news = str_slug($request->name);
+		$news->title_en_news = str_slug($request->title);
+		$news->id_category_in_news = $request->category;
 		$news->short_description_news = $request->description;
 		$news->content_news = $request->content_news;
 

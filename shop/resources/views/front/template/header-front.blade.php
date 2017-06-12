@@ -46,7 +46,7 @@
                                 <ul class="nav navbar-nav">
                                     <li class="active"><a href="{{route('index')}}"><span class="fa fa-home"></span> Home</a></li>
                                     <li class="dropdown">
-                                        <a href="front/#" class="dropdown-toggle"
+                                        <a class="dropdown-toggle"
                                            data-toggle="dropdown">Product</a>
                                         <ul class="dropdown-menu container-fluid">
                                             <li class="block-container">
@@ -59,10 +59,24 @@
                                         </ul>
                                     </li>
                                     <!--<li><a href="front/#">Promotion</a></li>-->
-                                    <li><a href="front/news.html">News</a></li>
-                                    <li><a href="front/policy-faq.html">Policy & FAQ</a></li>
-                                    <li><a href="front/about-us.html">About Us</a></li>
-                                    <li><a href="front/contact-us.html">Contact Us</a></li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle"
+                                           data-toggle="dropdown">News</a>
+                                        <ul class="dropdown-menu container-fluid">
+                                            <li class="block-container">
+                                                <ul class="block">
+                                                    @foreach($categoriesNews as $categoryNewsList)
+                                                        <li><span></span><a href="{{route('category-news',['id'=>$categoryNewsList->id_category_news,'categoryNews'=>$categoryNewsList->name_category_news])}}">{{$categoryNewsList->name_category_news}}</a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a href="{{route('policy')}}">Policy & FAQ</a></li>
+                                    <li><a href="{{route('about')}}">About Us</a></li>
+                                    <li><a href="{{route('contact')}}">Contact Us</a></li>
                                 </ul>
                             </div><!--/.nav-collapse -->
                         </div>

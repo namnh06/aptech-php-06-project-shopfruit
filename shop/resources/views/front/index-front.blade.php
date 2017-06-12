@@ -1,4 +1,7 @@
 @extends('front.template.template-front')
+@section('css')
+
+    @endsection
 @section('slide')
     <!-- Home slideder-->
     <div id="home-slider">

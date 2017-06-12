@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <!-- Head HTML -->
+<head>
 @include('front.template.head-front')
+@yield('css')
+</head>
 <!-- End Head HTML -->
 <body class="green">
 <!-- POPUP LOGIN-REGISTER -->

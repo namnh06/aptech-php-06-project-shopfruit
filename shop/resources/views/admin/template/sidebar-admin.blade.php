@@ -132,6 +132,28 @@
 
                 </ul>
             </li>
+            <li class="nav-item  ">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="fa fa-newspaper-o"></i>
+                    <span class="title">Category News</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a href="{{route('list-category-news')}}" class="nav-link ">
+                            <i class="fa fa-list-alt"></i>
+                            <span class="title">List Category News</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('add-category-news-get')}}" class="nav-link ">
+                            <i class="fa fa-list-ul"></i>
+                            <span class="title">Add Category News</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
         </ul>
         <!-- END SIDEBAR MENU -->
         <!-- END SIDEBAR MENU -->

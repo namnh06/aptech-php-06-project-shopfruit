@@ -138,7 +138,7 @@
                         <div class="portlet-title">
                             <div class="caption">
                                 <i class=" icon-layers font-red"></i>
-                                <span class="caption-subject font-red sbold uppercase">Edit Category : {{$category->name_user}}</span>
+                                <span class="caption-subject font-red sbold uppercase">Edit Category : {{$category->name_category}}</span>
                             </div>
                             <div class="actions">
                                 <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">

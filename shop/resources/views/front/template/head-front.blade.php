@@ -1,5 +1,4 @@
-<head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Eco Shop</title>
     <base href="{{asset('')}}">
@@ -19,5 +18,3 @@
     <link rel="stylesheet" type="text/css" href="front/css/responsive.css"/>
     <link rel="stylesheet" type="text/css" href="front/css/style_frm_dkdn.css"/>
     <link rel="stylesheet" href="front/css/switcher.css">
-
-</head>
