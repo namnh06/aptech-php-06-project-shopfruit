@@ -316,6 +316,14 @@
                                         <span class="help-block">Product Long Description...</span>
                                     </div>
                                     <div class="form-group form-md-line-input">
+                                        <img src="upload/images/product/{{$product->avatar_product}}" alt=""
+                                             class="img-thumbnail" width="200px">
+                                        <input type="file" name="avatar"
+                                               class="form-control">
+                                        <label for="form_control_1">Avatar Product</label>
+                                        <span class="help-block">Product Avatar Upload...</span>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
                                         <img src="upload/images/product/{{$product->image_product}}" alt=""
                                              class="img-thumbnail" width="200px">
                                         <input type="file" name="image"

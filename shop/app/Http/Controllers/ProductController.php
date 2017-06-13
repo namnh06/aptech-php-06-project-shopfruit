@@ -38,6 +38,7 @@ class ProductController extends Controller
 				'quantity'=>'required',
 				's_description'=>'required',
 				'image'=>'required',
+				'avatar'=>'required'
 			],
 			[
 			]);
@@ -53,6 +54,29 @@ class ProductController extends Controller
 		$product->short_description_product = $request->s_description;
 		$product->long_description_product = $request->l_description;
 
+		//check avatar product
+		if($request->hasFile('avatar')){
+			$file = $request->file('avatar');
+			$ext = $file->getClientOriginalExtension();
+			$extArr = ['jpg', 'JPG', 'png', 'PNG', 'jpeg', 'JPEG'];
+			$extCheck = false;
+			foreach($extArr as $key=>$value){
+				if($ext == $value){
+					$extCheck = true;
+					break;
+				}
+			}
+			if($extCheck == false){
+				return redirect()->route('add-new-product-get')->with('error','Upload file has extension JPG, PNG or JPEG');
+			}
+			$nameAvatar = str_random(4)."_".str_slug($request->avatar).".".$ext;
+			while(file_exists('upload/images/product/'.$nameAvatar)){
+				$nameAvatar = str_random(4)."_".str_slug($request->avatar);
+			}
+			$file->move('upload/images/product/',$nameAvatar);
+			$product->avatar_product = $nameAvatar;
+		}
+		//check image product
 		if($request->hasFile('image')){
 			$file = $request->file('image');
 			$ext = $file->getClientOriginalExtension();
@@ -109,8 +133,30 @@ class ProductController extends Controller
 		$product->short_description_product = $request->s_description;
 		$product->long_description_product = $request->l_description;
 
-
-		//check file image
+		//check avatar image
+		if($request->hasFile('avatar')){
+			$file = $request->file('avatar');
+			$ext = $file->getClientOriginalExtension();
+			$extArr = ['jpg', 'JPG', 'png', 'PNG', 'jpeg', 'JPEG'];
+			$extCheck = false;
+			foreach($extArr as $key=>$value){
+				if($ext == $value){
+					$extCheck = true;
+					break;
+				}
+			}
+			if($extCheck == false){
+				return redirect()->route('edit-product-get',['id'=>$product->id_product])->with('error','Upload file has extension JPG, PNG or JPEG');
+			}
+			$nameAvatar = str_random(4)."_".str_slug($request->avatar).".".$ext;
+			while(file_exists('upload/images/product/'.$nameAvatar)){
+				$nameAvatar = str_random(4)."_".str_slug($request->name);
+			}
+			$file->move('upload/images/product/',$nameAvatar);
+			\File::delete("upload/images/product/$product->avatar_product");
+			$product->avatar_product = $nameAvatar;
+		}
+		//check product image
 		if($request->hasFile('image')){
 			$file = $request->file('image');
 			$ext = $file->getClientOriginalExtension();

@@ -331,6 +331,12 @@
                                         <span class="help-block">Product Long Description...</span>
                                     </div>
                                     <div class="form-group form-md-line-input">
+                                        <input type="file" name="avatar"
+                                               class="form-control">
+                                        <label for="form_control_1">Avatar Product</label>
+                                        <span class="help-block">Product Avatar Upload...</span>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
                                         <input type="file" name="image"
                                                class="form-control">
                                         <label for="form_control_1">Product

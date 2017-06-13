@@ -48,7 +48,7 @@
                                                    data-image="upload/images/product/{{$product->image_product}}"
                                                    data-zoom-image="upload/images/product/{{$product->image_product}}">
                                                     <img id="product-zoom"
-                                                         src="upload/images/product/{{$product->image_product}}"/>
+                                                         src="upload/images/product/{{$product->avatar_product}}"/>
                                                 </a>
                                             </li>
                                         </ul>
@@ -149,7 +149,7 @@
                                     <div class="product-container">
                                         <div class="left-block">
                                             <a><img class="img-responsive" alt="product"
-                                                    src="upload/images/product/{{$similarProduct->image_product}}"/></a>
+                                                    src="upload/images/product/{{$similarProduct->avatar_product}}"/></a>
 
                                             <div class="quick-view">
                                                 <a title="Add to my wishlist" class="heart" href="#"></a>
@@ -191,7 +191,7 @@
                                     <div class="product-container">
                                         <div class="left-block">
                                             <a><img class="img-responsive" alt="product"
-                                                    src="upload/images/product/{{$bestSellerProduct->image_product}}"/></a>
+                                                    src="upload/images/product/{{$bestSellerProduct->avatar_product}}"/></a>
 
                                             <div class="quick-view">
                                                 <a title="Add to my wishlist" class="heart" href="#"></a>

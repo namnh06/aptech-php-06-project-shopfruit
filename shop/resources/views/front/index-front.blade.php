@@ -59,7 +59,7 @@
                                     <div class="left-block">
                                         <a><img class="img-responsive"
                                                 alt="product"
-                                                src="upload/images/product/{{$promotionProduct->image_product}}"
+                                                src="upload/images/product/{{$promotionProduct->avatar_product}}"
                                                 width="300px"/></a>
                                         <div class="quick-view">
                                             <a title="Add to my wishlist"
@@ -131,7 +131,7 @@
                                     <li class="col-sm-4 product-item">
                                         <div class="left-block">
                                             <a><img class="img-responsive" alt="product"
-                                                    src="upload/images/product/{{$bestSellerProduct->image_product}}"/></a>
+                                                    src="upload/images/product/{{$bestSellerProduct->avatar_product}}"/></a>
 
                                             <div class="quick-view">
                                                 <a title="Add to my wishlist" class="heart" href="front/#"></a>
@@ -186,7 +186,7 @@
                                     <li class="col-sm-4 product-item">
                                         <div class="left-block">
                                             <a><img class="img-responsive" alt="product"
-                                                    src="upload/images/product/{{$comingProduct->image_product}}"/></a>
+                                                    src="upload/images/product/{{$comingProduct->avatar_product}}"/></a>
 
                                             <div class="quick-view">
                                                 <a title="Add to my wishlist" class="heart" href="front/#"></a>
