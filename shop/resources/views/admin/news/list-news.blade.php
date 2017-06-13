@@ -117,7 +117,7 @@
                                         <td>{!!
                                         "$news->title_vi_news
                                         <br>
-                                        <img src='upload/images/news/$news->images_news' width=100px"
+                                        <img src='upload/images/news/$news->image_news' width=100px"
                                         !!}</td>
                                         <td>{{$news->id_category_in_news}}</td>
                                         <td>{{$news->id_user_in_news}}</td>

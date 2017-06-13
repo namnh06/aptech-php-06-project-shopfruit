@@ -197,7 +197,7 @@
                                         <span class="help-block">Enter Content News...</span>
                                     </div>
                                     <div class="form-group form-md-line-input">
-                                        <img src="upload/images/news/{{$news->images_news}}" alt=""
+                                        <img src="upload/images/news/{{$news->image_news}}" alt=""
                                              class="img-thumbnail" width="200px">
                                         <input type="file" name="image"
                                                class="form-control">

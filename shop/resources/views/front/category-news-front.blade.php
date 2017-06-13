@@ -128,7 +128,7 @@
                                     <div class="col-sm-3">
                                         <div class="entry-thumb image-hover2">
                                             <a>
-                                                <img src="upload/images/news/{{$news->images_news}}" alt="News">
+                                                <img src="upload/images/news/{{$news->image_news}}" alt="News">
                                             </a>
                                         </div>
                                     </div>

@@ -59,7 +59,7 @@
                                     <div class="left-block">
                                         <a><img class="img-responsive"
                                                 alt="product"
-                                                src="upload/images/product/{{$promotionProduct->images_product}}"
+                                                src="upload/images/product/{{$promotionProduct->image_product}}"
                                                 width="300px"/></a>
                                         <div class="quick-view">
                                             <a title="Add to my wishlist"
@@ -67,7 +67,7 @@
                                             <a title="Add to compare"
                                                class="compare" href="front/#"></a>
                                             <a title="Quick view"
-                                               href="upload/images/product/{{$promotionProduct->images_product}}"
+                                               href="upload/images/product/{{$promotionProduct->image_product}}"
                                                class="search fancybox-button"></a>
                                         </div>
                                         <div class="add-to-cart">
@@ -131,12 +131,12 @@
                                     <li class="col-sm-4 product-item">
                                         <div class="left-block">
                                             <a><img class="img-responsive" alt="product"
-                                                    src="upload/images/product/{{$bestSellerProduct->images_product}}"/></a>
+                                                    src="upload/images/product/{{$bestSellerProduct->image_product}}"/></a>
 
                                             <div class="quick-view">
                                                 <a title="Add to my wishlist" class="heart" href="front/#"></a>
                                                 <a title="Add to compare" class="compare" href="front/#"></a>
-                                                <a title="Quick view" href="upload/images/product/{{$bestSellerProduct->images_product}}" class="search fancybox-button"></a>
+                                                <a title="Quick view" href="upload/images/product/{{$bestSellerProduct->image_product}}" class="search fancybox-button"></a>
                                             </div>
                                             <div class="add-to-cart">
                                                 <a class="add-item-to-cart" title="Add to Cart" href="front/#" data-name="Spinach - 1kg"
@@ -186,12 +186,12 @@
                                     <li class="col-sm-4 product-item">
                                         <div class="left-block">
                                             <a><img class="img-responsive" alt="product"
-                                                    src="upload/images/product/{{$comingProduct->images_product}}"/></a>
+                                                    src="upload/images/product/{{$comingProduct->image_product}}"/></a>
 
                                             <div class="quick-view">
                                                 <a title="Add to my wishlist" class="heart" href="front/#"></a>
                                                 <a title="Add to compare" class="compare" href="front/#"></a>
-                                                <a title="Quick view" href="upload/images/product/{{$comingProduct->images_product}}" class="search fancybox-button"></a>
+                                                <a title="Quick view" href="upload/images/product/{{$comingProduct->image_product}}" class="search fancybox-button"></a>
                                             </div>
                                             <div class="add-to-cart">
                                                 <a class="not-active" title="Add to Cart" readonly="true">Add to Cart</a>

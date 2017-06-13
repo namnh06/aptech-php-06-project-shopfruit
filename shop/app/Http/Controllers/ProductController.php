@@ -72,7 +72,7 @@ class ProductController extends Controller
 				$nameImage = str_random(4)."_".str_slug($request->name);
 			}
 			$file->move('upload/images/product/',$nameImage);
-			$product->images_product = $nameImage;
+			$product->image_product = $nameImage;
 		}
 		$product->save();
 
@@ -130,8 +130,8 @@ class ProductController extends Controller
 				$nameImage = str_random(4)."_".str_slug($request->name);
 			}
 			$file->move('upload/images/product/',$nameImage);
-			\File::delete("upload/images/product/$product->images_product");
-			$product->images_product = $nameImage;
+			\File::delete("upload/images/product/$product->image_product");
+			$product->image_product = $nameImage;
 		}
 		$product->save();
 
@@ -140,7 +140,7 @@ class ProductController extends Controller
 	//delete category
 	function deleteProduct($id){
 		$product = ProductModel::find($id);
-		\File::delete("upload/images/product/$product->images_product");
+		\File::delete("upload/images/product/$product->image_product");
 		$product->delete();
 
 		return redirect()->route('list-product')->with('announcement','Delete Successfully');

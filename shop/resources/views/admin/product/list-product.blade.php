@@ -121,7 +121,7 @@
                                         <td>{!!
                                         "$product->name_vi_product
                                         <br>
-                                        <img src='upload/images/product/$product->images_product' width=100px"
+                                        <img src='upload/images/product/$product->image_product' width=100px"
                                         !!}</td>
                                         <td>{{$product->id_category_in_product}}</td>
                                         <td>{{$product->price_product}}</td>

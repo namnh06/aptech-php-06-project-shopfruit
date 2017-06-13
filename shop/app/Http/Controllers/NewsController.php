@@ -68,7 +68,7 @@ class NewsController extends Controller
 				$nameImage = str_random(4)."_".str_slug($request->name);
 			}
 			$file->move('upload/images/news/',$nameImage);
-			$news->images_news = $nameImage;
+			$news->image_news = $nameImage;
 		}
 		$news->save();
 
@@ -118,7 +118,7 @@ class NewsController extends Controller
 				$nameImage = str_random(4)."_".str_slug($request->name);
 			}
 			$file->move('upload/images/news/',$nameImage);
-			$news->images_news = $nameImage;
+			$news->image_news = $nameImage;
 		}
 		$news->save();
 
@@ -127,7 +127,7 @@ class NewsController extends Controller
 	//delete category
 	function deleteNews($id){
 		$news = NewsModel::find($id);
-		File::delete("upload/images/news/$news->images_news");
+		File::delete("upload/images/news/$news->image_news");
 		$news->delete();
 
 		return redirect()->route('list-news')->with('announcement','Delete Successfully');

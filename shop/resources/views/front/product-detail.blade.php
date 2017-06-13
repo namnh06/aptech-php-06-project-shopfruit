@@ -38,17 +38,17 @@
                                 <!-- product-imge-->
                                 <div class="product-image">
                                     <div class="product-full">
-                                        <img id="product-zoom" src="upload/images/product/{{$product->images_product}}" width="600px" data-zoom-image="upload/images/product/{{$product->images_product}}"/>
+                                        <img id="product-zoom" src="upload/images/product/{{$product->image_product}}" width="600px" data-zoom-image="upload/images/product/{{$product->image_product}}"/>
                                     </div>
                                     <div class="product-img-thumb" id="gallery_01">
                                         <ul class="owl-carousel" data-items="3" data-nav="true" data-dots="false"
                                             data-margin="20" data-loop="true">
                                             <li>
                                                 <a href="#"
-                                                   data-image="upload/images/product/{{$product->images_product}}"
-                                                   data-zoom-image="upload/images/product/{{$product->images_product}}">
+                                                   data-image="upload/images/product/{{$product->image_product}}"
+                                                   data-zoom-image="upload/images/product/{{$product->image_product}}">
                                                     <img id="product-zoom"
-                                                         src="upload/images/product/{{$product->images_product}}"/>
+                                                         src="upload/images/product/{{$product->image_product}}"/>
                                                 </a>
                                             </li>
                                         </ul>
@@ -149,13 +149,13 @@
                                     <div class="product-container">
                                         <div class="left-block">
                                             <a><img class="img-responsive" alt="product"
-                                                    src="upload/images/product/{{$similarProduct->images_product}}"/></a>
+                                                    src="upload/images/product/{{$similarProduct->image_product}}"/></a>
 
                                             <div class="quick-view">
                                                 <a title="Add to my wishlist" class="heart" href="#"></a>
                                                 <a title="Add to compare" class="compare" href="#"></a>
                                                 <a title="Quick view"
-                                                   href="upload/images/product/{{$similarProduct->images_product}}"
+                                                   href="upload/images/product/{{$similarProduct->image_product}}"
                                                    class="search fancybox-button"></a>
                                             </div>
                                             <div class="add-to-cart">
@@ -191,13 +191,13 @@
                                     <div class="product-container">
                                         <div class="left-block">
                                             <a><img class="img-responsive" alt="product"
-                                                    src="upload/images/product/{{$bestSellerProduct->images_product}}"/></a>
+                                                    src="upload/images/product/{{$bestSellerProduct->image_product}}"/></a>
 
                                             <div class="quick-view">
                                                 <a title="Add to my wishlist" class="heart" href="#"></a>
                                                 <a title="Add to compare" class="compare" href="#"></a>
                                                 <a title="Quick view"
-                                                   href="upload/images/product/{{$bestSellerProduct->images_product}}"
+                                                   href="upload/images/product/{{$bestSellerProduct->image_product}}"
                                                    class="search fancybox-button"></a>
                                             </div>
                                             <div class="add-to-cart">

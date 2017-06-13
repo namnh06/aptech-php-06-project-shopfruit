@@ -316,7 +316,7 @@
                                         <span class="help-block">Product Long Description...</span>
                                     </div>
                                     <div class="form-group form-md-line-input">
-                                        <img src="upload/images/product/{{$product->images_product}}" alt=""
+                                        <img src="upload/images/product/{{$product->image_product}}" alt=""
                                              class="img-thumbnail" width="200px">
                                         <input type="file" name="image"
                                                class="form-control">
