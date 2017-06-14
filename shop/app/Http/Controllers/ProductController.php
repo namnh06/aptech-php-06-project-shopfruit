@@ -71,7 +71,7 @@ class ProductController extends Controller
 			}
 			$nameAvatar = str_random(4)."_".str_slug($request->avatar).".".$ext;
 			while(file_exists('upload/images/product/'.$nameAvatar)){
-				$nameAvatar = str_random(4)."_".str_slug($request->avatar);
+				$nameAvatar = str_random(4)."_".str_slug($request->avatar).".".$ext;
 			}
 			$file->move('upload/images/product/',$nameAvatar);
 			$product->avatar_product = $nameAvatar;
@@ -135,6 +135,7 @@ class ProductController extends Controller
 
 		//check avatar image
 		if($request->hasFile('avatar')){
+
 			$file = $request->file('avatar');
 			$ext = $file->getClientOriginalExtension();
 			$extArr = ['jpg', 'JPG', 'png', 'PNG', 'jpeg', 'JPEG'];
@@ -148,9 +149,9 @@ class ProductController extends Controller
 			if($extCheck == false){
 				return redirect()->route('edit-product-get',['id'=>$product->id_product])->with('error','Upload file has extension JPG, PNG or JPEG');
 			}
-			$nameAvatar = str_random(4)."_".str_slug($request->avatar).".".$ext;
+			$nameAvatar = str_random(4)."_".str_slug($request->name).".".$ext;
 			while(file_exists('upload/images/product/'.$nameAvatar)){
-				$nameAvatar = str_random(4)."_".str_slug($request->name);
+				$nameAvatar = str_random(4)."_".str_slug($request->name).".".$ext;
 			}
 			$file->move('upload/images/product/',$nameAvatar);
 			\File::delete("upload/images/product/$product->avatar_product");

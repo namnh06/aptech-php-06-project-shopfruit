@@ -7,6 +7,8 @@
 </head>
 <!-- End Head HTML -->
 <body class="green">
+@include('front.template.announcement')
+@include('front.template.error')
 <!-- POPUP LOGIN-REGISTER -->
 @include('front.template.login-register-popup-front')
 <!--EN LOGIN REGISTER-->

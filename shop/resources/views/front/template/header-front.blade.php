@@ -18,12 +18,24 @@
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 group-button-header">
                 <a title="Compare" href="front/#" class="btn-compare">Compare</a>
                 <a title="My wishlist" href="front/#" class="btn-heart">Heart</a>
+                @if(Auth::user() && Auth::user()->permission_user == 2)
+                    <a href="javascript:;"  class="btn-cart dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <img alt="" class="img-circle" src="assets/layouts/layout/img/avatar3_small.jpg" width="50px" />
+                        <p style=" width: 200px; position: relative; left: -50px; top: 10px; "><span class="username username-hide-on-mobile"> Hello, {!!'<b>' .Auth::user()->name_user. '</b>'!!} <i class="fa fa-angle-down"></i></span></p>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{route('logout-customer')}}">
+                                <i class="icon-user"></i> Logout </a>
+                        </li>
+                    </ul>
+
+                    @else
 
                 <div class="btn-cart" id="cart-block">
                     <a title="SignIn" href="" data-toggle="modal" data-target="#myModal">Log In</a>
-
-
                 </div>
+                    @endif
             </div>
         </div>
     </div>

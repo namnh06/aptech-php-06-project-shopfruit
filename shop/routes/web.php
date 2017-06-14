@@ -104,4 +104,14 @@ Route::group(['prefix'=>'front'],function(){
 	Route::get('about','PagesController@about')->name('about');
 	//contact
 	Route::get('contact','PagesController@contact')->name('contact');
+
+	/*
+	 * CUSTOMER
+	 */
+	//register
+	Route::post('register','UserController@registerCustomer')->name('register');
+	//login customer
+	Route::post('login-customer','UserController@loginCustomer')->name('login-customer');
+	//logout customer
+	Route::get('logout-customer','UserController@logoutCustomer')->name('logout-customer');
 });

@@ -127,4 +127,53 @@ class UserController extends Controller
 
 		return redirect()->route('list-user')->with('announcement', 'Delete Successfully');
 	}
+
+	/*
+	 * CUSTOMER
+	 * REGISTER
+	 */
+
+	//register customer
+	function registerCustomer(Request $request){
+		$this->validate($request,
+			[
+				'name'=>'required',
+				'email'=>'required|unique:users,email_user',
+				'password'=>'required'
+			]
+			,
+			[
+
+			]);
+
+		$customer = new User();
+		$customer->name_user = $request->name;
+		$customer->email_user = $request->email;
+		$customer->password = bcrypt($request->password);
+		$customer->permission_user = 2;
+		$customer->save();
+		return redirect()->route('index')->with('announcement','Register Successfully');
+	}
+	//login customer
+	function loginCustomer(Request $request){
+		$this->validate($request,
+			[
+				'email_user'=>'required',
+				'password'=>'required'
+			],
+			[
+
+			]);
+		if(Auth::attempt(['email_user'=>$request->email_user,'password'=>$request->password])){
+			return redirect()->route('index')->with('announcement','Login Successfully');
+		} else {
+			return redirect()->route('index')->with('error','Login failed');
+		}
+	}
+
+	//logout customer
+	function logoutCustomer(){
+		Auth::logout();
+		return redirect()->route('index')->with('announcement','Logout Successfully');
+	}
 }
