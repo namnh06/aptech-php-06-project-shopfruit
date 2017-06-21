@@ -13,7 +13,7 @@
 @include('front.template.login-register-popup-front')
 <!--EN LOGIN REGISTER-->
 <!-- Side Cart -->
-@include('front.template.side-cart-front')
+@yield('side-cart')
 <!--End Side Cart -->
 <!-- HEADER -->
 @include('front.template.header-front')

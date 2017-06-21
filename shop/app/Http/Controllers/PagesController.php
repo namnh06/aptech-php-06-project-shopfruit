@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\CategoryModel;
 use App\NewsModel;
 use App\ProductModel;
 use App\CategoryNewsModel;
 use Illuminate\Http\Request;
+use Session;
 
 class PagesController extends Controller
 {
@@ -76,6 +78,45 @@ class PagesController extends Controller
 	function contact()
 	{
 		return view('front.contact');
+	}
+
+	function getAddToCart(Request $request,$id){
+		$product = ProductModel::find($id);
+		$oldCart = Session('cart')?Session::get('cart'):null;
+
+		$cart = new Cart($oldCart);
+		$cart->addToCart($product,$id);
+		$request->session()->put('cart',$cart);
+		return redirect()->back();
+
+	}
+
+	function getRemoveItem($id){
+		$oldCart = Session::get('cart')?Session::get('cart'):null;
+		$cart = new Cart($oldCart);
+		$cart->removeItem($id);
+		if(count($cart->items)>0){
+			Session::put('cart',$cart);
+		} else {
+			Session::forget('cart');
+		}
+		return redirect()->back();
+	}
+
+	function getReduceByOne($id){
+		$oldCart = Session::get('cart')?Session::get('cart'):null;
+		$cart = new Cart($oldCart);
+		$cart->reduceByOne($id);
+		if(count($cart->items)>0){
+			Session::put('cart',$cart);
+		} else {
+			Session::forget('cart');
+		}
+		return redirect()->back();
+	}
+
+	function getCheckout(){
+		return view('front.checkout');
 	}
 }
 

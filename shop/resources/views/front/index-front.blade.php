@@ -2,6 +2,9 @@
 @section('css')
 
     @endsection
+@section('side-cart')
+    @include('front.template.side-cart-front')
+    @endsection
 @section('slide')
     <!-- Home slideder-->
     <div id="home-slider">
@@ -71,8 +74,9 @@
                                                class="search fancybox-button"></a>
                                         </div>
                                         <div class="add-to-cart">
-                                            <a class="add-item-to-cart"
-                                               title="Add to Carr" href="front/#"
+                                            <a
+                                                    {{--class="add-item-to-cart"--}}
+                                               title="Add to Cart" href="{{route('get-add-to-cart',['id'=>$promotionProduct->id_product])}}"
                                                data-name="Asparagus - 1kg"
                                                data-price="38500"
                                                data-image="vegetables/asparagus_300x300.jpg"
@@ -139,7 +143,9 @@
                                                 <a title="Quick view" href="upload/images/product/{{$bestSellerProduct->image_product}}" class="search fancybox-button"></a>
                                             </div>
                                             <div class="add-to-cart">
-                                                <a class="add-item-to-cart" title="Add to Cart" href="front/#" data-name="Spinach - 1kg"
+                                                <a
+                                                        {{--class="add-item-to-cart" --}}
+                                                        title="Add to Cart" href="{{route('get-add-to-cart',['id'=>$bestSellerProduct->id_product])}}" data-name="Spinach - 1kg"
                                                    data-price="55000" data-image="vegetables/spinach_300x300.jpg" data-product-code="SP109">Add to Cart</a>
                                             </div>
                                             <div class="bestseller"></div>

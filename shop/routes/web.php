@@ -114,4 +114,12 @@ Route::group(['prefix'=>'front'],function(){
 	Route::post('login-customer','UserController@loginCustomer')->name('login-customer');
 	//logout customer
 	Route::get('logout-customer','UserController@logoutCustomer')->name('logout-customer');
+
+	/*
+	 * CART
+	 */
+	Route::get('add-to-cart/{id}','PagesController@getAddToCart')->name('get-add-to-cart');
+	Route::get('remove-item/{id}','PagesController@getRemoveItem')->name('get-remove-item');
+	Route::get('reduce-by-one/{id}','PagesController@getReduceByOne')->name('get-reduce-by-one');
+	Route::get('checkout','PagesController@getCheckout')->name('get-checkout');
 });
