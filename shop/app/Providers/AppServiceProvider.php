@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
 		Schema::defaultStringLength(191);
-		View::composer(['front.index-front','front.checkout'],function($view){
+		View::composer(['front.index-front','front.shopping-cart','front.checkout'],function($view){
 			if(Session('cart')){
 				$oldCart = Session::get('cart');
 				$cart = new Cart($oldCart);

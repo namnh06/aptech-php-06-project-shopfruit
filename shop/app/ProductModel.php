@@ -13,4 +13,8 @@ class ProductModel extends Model
 	public function category(){
 		return $this->belongsTo('App\ProductModel','id_category_in_product','id_category');
 	}
+
+	function billDetail(){
+		return $this->hasMany('App\BillDetail','id_product','id_product');
+	}
 }

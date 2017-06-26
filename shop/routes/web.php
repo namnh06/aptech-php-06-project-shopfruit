@@ -121,5 +121,7 @@ Route::group(['prefix'=>'front'],function(){
 	Route::get('add-to-cart/{id}','PagesController@getAddToCart')->name('get-add-to-cart');
 	Route::get('remove-item/{id}','PagesController@getRemoveItem')->name('get-remove-item');
 	Route::get('reduce-by-one/{id}','PagesController@getReduceByOne')->name('get-reduce-by-one');
+	Route::get('shopping-cart','PagesController@getShoppingCart')->name('get-shopping-cart');
 	Route::get('checkout','PagesController@getCheckout')->name('get-checkout');
+	Route::post('post-checkout','PagesController@postCheckout')->name('post-checkout');
 });

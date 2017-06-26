@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Bill;
+use App\BillDetail;
 use App\Cart;
 use App\CategoryModel;
+use App\Customer;
 use App\NewsModel;
 use App\ProductModel;
 use App\CategoryNewsModel;
@@ -115,8 +118,44 @@ class PagesController extends Controller
 		return redirect()->back();
 	}
 
+	function getShoppingCart(){
+		return view('front.shopping-cart');
+	}
+
 	function getCheckout(){
 		return view('front.checkout');
+	}
+
+	function postCheckout(Request $request){
+		$cart = Session::get('cart');
+
+		$customer = new Customer();
+		$customer->first_name = $request->firstName;
+		$customer->last_name = $request->lastName;
+		$customer->email = $request->email;
+		$customer->telephone = $request->phone;
+		$customer->address = $request->address;
+		$customer->save();
+
+		$bill = new Bill();
+		$bill->id_customer = $customer->id;
+		$bill->date_bill = date('Y-m-d');
+		$bill->total_price_bill = $cart->totalPrice;
+		$bill->status = 1;
+		$bill->save();
+
+		foreach($cart->items as $key=>$value){
+			$billDetail = new BillDetail();
+			$billDetail->id_bill = $bill->id_bill;
+			$billDetail->id_product = $key;
+			$billDetail->quantity = $value['quantity'];
+			$billDetail->unit_price = $value['price']/$value['quantity'];
+			$billDetail->save();
+		}
+
+		Session::forget('cart');
+		return redirect()->route('index')->with('announcement','Your order was successfully');
+
 	}
 }
 

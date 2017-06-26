@@ -57,10 +57,10 @@
                                             valign="top"><span
                                                     class="amount">
                                                     @if($product['item']['percent_discount_product'] == 0)
-                                                    {{$product['item']['price_product']}}
+                                                    {{number_format($product['item']['price_product'])}}
                                                     @else
 
-                                                    {{$product['item']['price_product']*(100-$product['item']['percent_discount_product'])/100}}
+                                                    {{number_format($product['item']['price_product']*(100-$product['item']['percent_discount_product'])/100)}}
                                                     @endif</span>
 
                                         </td>
@@ -78,14 +78,14 @@
                           {{--id="total_price"--}}
                     >
                         @if(Session::has('cart'))
-                            {{$totalPrice}}
+                            {{number_format($totalPrice)}}
                         @else
                             {{0}}
                         @endif
                     </span>
                 </div>
                 <div class="cart-buttons">
-                    <a href="{{route('get-checkout')}}"
+                    <a href="{{route('get-shopping-cart')}}"
                        class="btn-check-out">Payment</a>
                 </div>
             </div>
