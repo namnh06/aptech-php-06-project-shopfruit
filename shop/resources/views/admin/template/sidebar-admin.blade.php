@@ -151,6 +151,28 @@
                             <span class="title">Add Category News</span>
                         </a>
                     </li>
+                </ul>
+            </li>
+
+            <li class="nav-item  ">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="fa fa-newspaper-o"></i>
+                    <span class="title">Bill</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a href="{{route('list-bill')}}" class="nav-link ">
+                            <i class="fa fa-list-alt"></i>
+                            <span class="title">List Bill</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('add-category-news-get')}}" class="nav-link ">
+                            <i class="fa fa-list-ul"></i>
+                            <span class="title">Customer</span>
+                        </a>
+                    </li>
 
                 </ul>
             </li>

@@ -83,6 +83,15 @@ Route::group(['prefix'=>'admin','middleware'=>'admin.login'],function(){
 		//delete news
 		Route::get('delete-news/{id}','NewsController@deleteNews')->name('delete-news');
 	});
+	//bill
+	Route::group(['prefix'=>'bill'],function(){
+		//list bill
+		Route::get('list-bill','BillController@listBill')->name('list-bill');
+		//delete bill
+		Route::get('delete-bill/{id}','BillController@deleteBill')->name('delete-bill');
+		//detail bill
+		Route::get('bill-detail/{id}','BillController@billDetail')->name('bill-detail');
+	});
 });
 
 Route::group(['prefix'=>'front'],function(){

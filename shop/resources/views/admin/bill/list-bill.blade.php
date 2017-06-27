@@ -20,7 +20,9 @@
                 </ul>
                 <div class="page-toolbar">
                     <div class="btn-group pull-right">
-                        <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> Actions
+                        <button type="button"
+                                class="btn green btn-sm btn-outline dropdown-toggle"
+                                data-toggle="dropdown"> Actions
                             <i class="fa fa-angle-down"></i>
                         </button>
                         <ul class="dropdown-menu pull-right" role="menu">
@@ -30,13 +32,15 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="icon-shield"></i> Another action</a>
+                                    <i class="icon-shield"></i> Another
+                                    action</a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="icon-user"></i> Something else here</a>
+                                    <i class="icon-user"></i> Something else
+                                    here</a>
                             </li>
-                            <li class="divider"> </li>
+                            <li class="divider"></li>
                             <li>
                                 <a href="#">
                                     <i class="icon-bag"></i> Separated link</a>
@@ -62,11 +66,14 @@
                                 <span class="caption-subject font-red sbold uppercase">Editable Table</span>
                             </div>
                             <div class="actions">
-                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                <div class="btn-group btn-group-devided"
+                                     data-toggle="buttons">
                                     <label class="btn btn-transparent red btn-outline btn-circle btn-sm active">
-                                        <input type="radio" name="options" class="toggle" id="option1">Actions</label>
+                                        <input type="radio" name="options"
+                                               class="toggle" id="option1">Actions</label>
                                     <label class="btn btn-transparent red btn-outline btn-circle btn-sm">
-                                        <input type="radio" name="options" class="toggle" id="option2">Settings</label>
+                                        <input type="radio" name="options"
+                                               class="toggle" id="option2">Settings</label>
                                 </div>
                             </div>
                         </div>
@@ -75,77 +82,77 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="btn-group">
-                                            <a href="{{route('add-new-product-get')}}"><button id="sample_editable_1_new" class="btn green"> Add New
+                                            <a href="{{route('add-new-product-get')}}">
+                                                <button id="sample_editable_1_new"
+                                                        class="btn green"> Add
+                                                    New
                                                     <i class="fa fa-plus"></i>
-                                                </button></a>
+                                                </button>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="btn-group pull-right">
-                                            <button class="btn green btn-outline dropdown-toggle" data-toggle="dropdown">Tools
+                                            <button class="btn green btn-outline dropdown-toggle"
+                                                    data-toggle="dropdown">Tools
                                                 <i class="fa fa-angle-down"></i>
                                             </button>
                                             <ul class="dropdown-menu pull-right">
                                                 <li>
-                                                    <a href="javascript:;"> Print </a>
+                                                    <a href="javascript:;">
+                                                        Print </a>
                                                 </li>
                                                 <li>
-                                                    <a href="javascript:;"> Save as PDF </a>
+                                                    <a href="javascript:;"> Save
+                                                        as PDF </a>
                                                 </li>
                                                 <li>
-                                                    <a href="javascript:;"> Export to Excel </a>
+                                                    <a href="javascript:;">
+                                                        Export to Excel </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+                            <table class="table table-striped table-hover table-bordered"
+                                   id="sample_editable_1">
                                 <thead>
                                 <tr>
-                                    <th> Name & Image </th>
-                                    <th> Id Category </th>
-                                    <th> Price </th>
-                                    <th> Discount </th>
-                                    <th> Code </th>
-                                    <th> Status </th>
-                                    <th> Quantity </th>
-                                    <th> S-Description</th>
-                                    <th> Edit </th>
-                                    <th> Delete </th>
+                                    <th> ID Bill</th>
+                                    <th> Name</th>
+                                    <th> Email</th>
+                                    <th> Phone</th>
+                                    <th> Total Price</th>
+                                    <th> Status</th>
+<th>Detail Bill</th>
+                                    <th> Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($products as $product)
+                                @foreach($bills as $bill)
                                     <tr>
-                                        <td>{!!
-                                        "$product->name_vi_product
-                                        <br>
-                                        <img src='upload/images/product/$product->image_product' width=100px"
-                                        !!}</td>
-                                        <td>{{$product->id_category_in_product}}</td>
-                                        <td>{{$product->price_product}}</td>
-                                        <td>{{$product->percent_discount_product}}</td>
-                                        <td>{{$product->code_product}}</td>
-                                        <td>@if($product->status_product == 1)
-                                        {{'In-Stock'}}
-                                        @else
-                                                {{'Out-Stock'}}
+                                       <td>{{$bill->id_bill}}</td>
+                                        <td>{{$bill->customer->last_name}}</td>
+                                        <td>{{$bill->customer->email}}</td>
+                                        <td>{{$bill->customer->telephone}}</td>
+                                        <td>{{$bill->total_price_bill}}</td>
+                                        <td>@if($bill->status == 1)
+                                        {{'Ordered'}}
                                         @endif</td>
-                                        <td>{{$product->quantity_product}}</td>
-                                        <td>{{str_limit($product->short_description_product,100)}}</td>
+                                        <td><a href="{{route('bill-detail',['id'=>$bill->id_bill])}}">Detail</a></td>
                                         <td>
-                                            <a class="edit" href="{{route('edit-product-get',['id'=>$product->id_product])}}"> Edit </a>
-                                        </td>
-                                        <td>
-                                            <a class="delete" href="{{route('delete-product',['id'=>$product->id_product])}}"> Delete </a>
+                                            <a class="delete"
+                                               href="{{route('delete-bill',['id'=>$bill->id_bill])}}
+                                                       ">
+                                                Delete </a>
                                         </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
                             <div class="text-center">
-                                {!! $products->links() !!}
+                                {{--{!! $products->links() !!}--}}
                             </div>
                         </div>
                     </div>

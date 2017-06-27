@@ -104,19 +104,18 @@
                                 <thead>
                                 <tr>
                                     <th> Name & Image </th>
-                                    <th> Id Category </th>
+                                    <th> ID Category </th>
                                     <th> Price </th>
                                     <th> Discount </th>
                                     <th> Code </th>
                                     <th> Status </th>
                                     <th> Quantity </th>
-                                    <th> S-Description</th>
-                                    <th> Edit </th>
-                                    <th> Delete </th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($products as $product)
+                                @foreach($products as $key=>$value)
+                                    @foreach($value as $product)
+
                                     <tr>
                                         <td>{!!
                                         "$product->name_vi_product
@@ -128,24 +127,26 @@
                                         <td>{{$product->percent_discount_product}}</td>
                                         <td>{{$product->code_product}}</td>
                                         <td>@if($product->status_product == 1)
-                                        {{'In-Stock'}}
-                                        @else
+                                                {{'In-Stock'}}
+                                            @else
                                                 {{'Out-Stock'}}
-                                        @endif</td>
-                                        <td>{{$product->quantity_product}}</td>
-                                        <td>{{str_limit($product->short_description_product,100)}}</td>
+                                            @endif</td>
+
                                         <td>
-                                            <a class="edit" href="{{route('edit-product-get',['id'=>$product->id_product])}}"> Edit </a>
-                                        </td>
-                                        <td>
-                                            <a class="delete" href="{{route('delete-product',['id'=>$product->id_product])}}"> Delete </a>
+                                        @foreach($billDetail as $bill)
+                                            @if($bill->id_product == $product->id_product)
+                                            {{$bill->quantity}}
+                                                @break
+                                            @endif
+                                            @endforeach
                                         </td>
                                     </tr>
+                                        @endforeach
                                 @endforeach
                                 </tbody>
                             </table>
                             <div class="text-center">
-                                {!! $products->links() !!}
+                                {{--{!! $products->links() !!}--}}
                             </div>
                         </div>
                     </div>

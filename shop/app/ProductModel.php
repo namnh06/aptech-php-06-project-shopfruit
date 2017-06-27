@@ -11,7 +11,7 @@ class ProductModel extends Model
 	protected $primaryKey = 'id_product';
 
 	public function category(){
-		return $this->belongsTo('App\ProductModel','id_category_in_product','id_category');
+		return $this->belongsTo('App\CategoryModel','id_category_in_product','id_category');
 	}
 
 	function billDetail(){

@@ -57,14 +57,19 @@ class Cart
 			$this->totalQuantity--;
 			$this->totalPrice -= $this->items[$id]['price'];
 			unset($this->items[$id]);
+			$this->totalQuantity--;
+			$this->totalPrice -= $this->items[$id]['price'];
 		} else {
 			if ($this->items[$id]['item']['percent_discount_product'] == 0) {
 				$this->items[$id]['price'] -= $this->items[$id]['item']['price_product'];
+				$this->totalQuantity--;
+				$this->totalPrice -= $this->items[$id]['item']['price_product'];
 			} else {
-				$this->items[$id]['price'] -= $this->items[$id]['item']['price_product'] * (100 - $this->items[$id]['item']['percent_discount_product']) / 100;;
+				$this->items[$id]['price'] -= $this->items[$id]['item']['price_product'] * (100 - $this->items[$id]['item']['percent_discount_product']) / 100;
+				$this->totalQuantity--;
+				$this->totalPrice -= $this->items[$id]['item']['price_product'] * (100 - $this->items[$id]['item']['percent_discount_product']) / 100;
 			}
-			$this->totalQuantity--;
-			$this->totalPrice -= $this->items[$id]['price'];
+
 		}
 	}
 
