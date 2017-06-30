@@ -75,8 +75,18 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="btn-group">
-                                            <a href="{{route('add-new-product-get')}}"><button id="sample_editable_1_new" class="btn green"> Add New
-                                                    <i class="fa fa-plus"></i>
+                                            <a href="{{route('order-bill',['id'=>$id,'number'=>1])}}">
+                                                <button id="sample_editable_1_new" class="btn green"> ORDERED
+                                                </button></a>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a href="{{route('order-bill',['id'=>$id,'number'=>2])}}">
+                                                <button id="sample_editable_1_new" class="btn red"> PENDING
+                                                </button></a>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a href="{{route('order-bill',['id'=>$id,'number'=>3])}}">
+                                                <button id="sample_editable_1_new" class="btn yellow"> ARRIVED
                                                 </button></a>
                                         </div>
                                     </div>
@@ -104,9 +114,8 @@
                                 <thead>
                                 <tr>
                                     <th> Name & Image </th>
-                                    <th> ID Category </th>
-                                    <th> Price </th>
-                                    <th> Discount </th>
+                                    <th> Name Category </th>
+                                    <th> Price After Discount </th>
                                     <th> Code </th>
                                     <th> Status </th>
                                     <th> Quantity </th>
@@ -122,9 +131,8 @@
                                         <br>
                                         <img src='upload/images/product/$product->image_product' width=100px"
                                         !!}</td>
-                                        <td>{{$product->id_category_in_product}}</td>
-                                        <td>{{$product->price_product}}</td>
-                                        <td>{{$product->percent_discount_product}}</td>
+                                        <td>{{$product->category->name_category}}</td>
+                                        <td>{{number_format($product->price_product*(100-$product->percent_discount_product)/100)}}</td>
                                         <td>{{$product->code_product}}</td>
                                         <td>@if($product->status_product == 1)
                                                 {{'In-Stock'}}

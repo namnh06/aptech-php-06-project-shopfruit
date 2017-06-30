@@ -68,28 +68,6 @@
             </li>
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-th-list"></i>
-                    <span class="title">Category</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="{{route('list-category')}}" class="nav-link ">
-                            <i class="fa fa-list-alt"></i>
-                            <span class="title">List Category</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{route('add-new-category-get')}}" class="nav-link ">
-                            <i class="fa fa-list-ul"></i>
-                            <span class="title">Add Category</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-basket"></i>
                     <span class="title">Product</span>
                     <span class="arrow"></span>
@@ -107,7 +85,18 @@
                             <span class="title">Add Product</span>
                         </a>
                     </li>
-
+                    <li class="nav-item  ">
+                        <a href="{{route('list-category')}}" class="nav-link ">
+                            <i class="fa fa-list-alt"></i>
+                            <span class="title">List Category</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('add-new-category-get')}}" class="nav-link ">
+                            <i class="fa fa-list-ul"></i>
+                            <span class="title">Add Category</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item  ">
@@ -129,16 +118,6 @@
                             <span class="title">Add News</span>
                         </a>
                     </li>
-
-                </ul>
-            </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-newspaper-o"></i>
-                    <span class="title">Category News</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
                     <li class="nav-item  ">
                         <a href="{{route('list-category-news')}}" class="nav-link ">
                             <i class="fa fa-list-alt"></i>
@@ -156,7 +135,7 @@
 
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-newspaper-o"></i>
+                    <i class="fa fa-life-ring"></i>
                     <span class="title">Bill</span>
                     <span class="arrow"></span>
                 </a>
@@ -165,12 +144,6 @@
                         <a href="{{route('list-bill')}}" class="nav-link ">
                             <i class="fa fa-list-alt"></i>
                             <span class="title">List Bill</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{route('add-category-news-get')}}" class="nav-link ">
-                            <i class="fa fa-list-ul"></i>
-                            <span class="title">Customer</span>
                         </a>
                     </li>
 

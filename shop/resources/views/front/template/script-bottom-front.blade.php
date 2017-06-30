@@ -15,6 +15,7 @@
 <script type="text/javascript" src="front/lib/jquery.elevatezoom.js"></script>
 <script type="text/javascript" src="front/lib/jquery-ui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="front/lib/fancyBox/jquery.fancybox.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function() {
         Layout.init();

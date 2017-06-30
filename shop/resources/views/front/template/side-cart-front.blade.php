@@ -72,7 +72,7 @@
                     </div>
 
                 </div>
-                <div class="toal-cart">
+                <div class="total-cart" id="gee">
                     <span>Total</span>
                     <span class="toal-price pull-right"
                           {{--id="total_price"--}}
@@ -92,3 +92,14 @@
         </div>
     </div>
 </div>
+{{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--}}
+{{--<script>--}}
+    {{--$(document).ready(function(){--}}
+        {{--$('.ajaxCart').click(function(){--}}
+            {{--console.log($('.nam').html());--}}
+{{--//                $.get('admin/ajax/cart-ajax',function(data){--}}
+{{--//--}}
+{{--//                });--}}
+        {{--});--}}
+    {{--});--}}
+{{--</script>--}}

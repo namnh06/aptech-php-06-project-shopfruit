@@ -91,10 +91,16 @@ Route::group(['prefix'=>'admin','middleware'=>'admin.login'],function(){
 		Route::get('delete-bill/{id}','BillController@deleteBill')->name('delete-bill');
 		//detail bill
 		Route::get('bill-detail/{id}','BillController@billDetail')->name('bill-detail');
+		//order bill
+		Route::get('order-bill/{id}/{number}','BillController@orderBill')->name('order-bill');
 	});
 });
 
 Route::group(['prefix'=>'front'],function(){
+	//ajax
+	Route::group(['prefix'=>'ajax'],function(){
+		Route::get('cart-ajax','AjaxController@cartAjax')->name('cart-ajax');
+	});
 	//home
 	Route::get('index','PagesController@index')->name('index');
 	//template

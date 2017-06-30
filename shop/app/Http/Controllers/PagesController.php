@@ -157,5 +157,6 @@ class PagesController extends Controller
 		return redirect()->route('index')->with('announcement','Your order was successfully');
 
 	}
+
 }
 

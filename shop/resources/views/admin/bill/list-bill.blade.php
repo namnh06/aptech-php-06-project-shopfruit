@@ -136,9 +136,25 @@
                                         <td>{{$bill->customer->last_name}}</td>
                                         <td>{{$bill->customer->email}}</td>
                                         <td>{{$bill->customer->telephone}}</td>
-                                        <td>{{$bill->total_price_bill}}</td>
+                                        <td>{{number_format($bill->total_price_bill)}}</td>
                                         <td>@if($bill->status == 1)
-                                        {{'Ordered'}}
+                                                <div class="btn-group">
+
+                                                        <button id="sample_editable_1_new" class="btn green"> ORDERED
+                                                        </button>
+                                                </div>
+                                                @elseif($bill->status == 2)
+                                                <div class="btn-group">
+
+                                                        <button id="sample_editable_1_new" class="btn red"> PENDING
+                                                        </button>
+                                                </div>
+                                                @elseif($bill->status == 3)
+                                                <div class="btn-group">
+
+                                                        <button id="sample_editable_1_new" class="btn yellow"> ARRIVED
+                                                        </button>
+                                                </div>
                                         @endif</td>
                                         <td><a href="{{route('bill-detail',['id'=>$bill->id_bill])}}">Detail</a></td>
                                         <td>
