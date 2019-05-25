@@ -15,7 +15,7 @@ class ForeignKeyNewsAndCategoryNews extends Migration
     {
         Schema::table('news', function (Blueprint $table) {
             //
-			$table->foreign('id_category_in_news')->references('id_category_news')->on('category_news');
+            $table->foreign('id_category_in_news')->references('id_category_news')->on('category_news');
         });
     }
 
